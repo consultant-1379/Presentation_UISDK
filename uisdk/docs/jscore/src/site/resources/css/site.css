@@ -1,0 +1,30 @@
+h2 {
+	font-size: 26px;
+	line-height: 54px;
+}
+
+h2 {
+	font-size: 22px;
+	line-height: 44px;
+}
+
+h3 {
+	font-size: 15px;
+	line-height: 27px;
+}
+
+.row-fluid .span2 {
+	width: 28%px;
+}
+
+#leftColumn {
+	width: 28%px;
+}
+
+#bodyColumn {
+	width: 70%px;
+}
+
+ul, ol {
+	margin: 0 0 9px 10px;
+}

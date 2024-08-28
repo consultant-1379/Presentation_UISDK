@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>UISDK-build</title>
+</properties>
+	
+<body>
+	<h1>USIDK-BUILD</h1>
+
+	<h2>What is UISDK-build?</h2>
+	<p> 
+		<ul>
+			<li>it's a lightweight Node.js application that performs common build phases for web application projects</li>
+			<li>command line based tool</li>
+			<li>encapsulates set of features to support large scale JavaScript applications</li>
+		</ul>
+	</p>
+	<!--
+	<object data="video/build.mp4" width="640" height="480" autoplay="false">
+		<param name="autoplay" value="false" />
+		<param name="autostart" value="0" />  
+	</object>
+	-->
+	<h2>UISDK-Build in action</h2>
+	<p>
+		Have a look at the video below to see UISDK-Build in action.
+	</p>	
+	<iframe scrolling="no" width="655" height="495" src="video/build_html5.html">
+	</iframe>
+
+	
+	
+	<h2>UISDK-build Architecture</h2>
+	<p>
+        TODO: Davis
+	</p>
+	
+	<h2>Why use UISDK-build?</h2>
+	<p>
+	UISDK-build has multiple features useful when building web application projects:
+	</p>
+	<ul>
+		<li>easy and intuitive to use</li>
+		<li>lightweight</li>
+		<li>extendable (modular architecture accomodates changes easily)</li>
+		<li>javascript oriented</li>
+		<li>globaly configurable (using JSON notation)</li>
+		<li>simple command line interface</li>
+		<li>embedded help</li>
+		<li>coming soon: archetype/skeleton - for rapid project building</li>
+	</ul>
+	<p>&nbsp;</p>
+</body>
+</document>

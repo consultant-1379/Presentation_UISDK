@@ -1,0 +1,1 @@
+{"name": "titan", "version": "@VERSION@", "bundledDependencies": ["handlebars", "less", "requirejs", "server", "shelljs","uglify-js", "yuidocjs"]}

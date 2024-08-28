@@ -1,0 +1,18 @@
+{
+    "name":"titan",
+    "version":"1.0.1-SNAPSHOT",
+    "bundledDependencies":[
+        "handlebars",
+        "less",
+        "requirejs",
+        "server",
+        "shelljs",
+        "yuidocjs"
+    ],
+    "devDependencies": {
+        "grunt":"https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/service/local/artifact/maven/content?g=ui&a=grunt&v=0.3.15&r=prototype&e=tar.gz",
+        "grunt-contrib-clean":"https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/service/local/artifact/maven/content?g=ui&a=grunt-contrib-clean&v=0.3.0&r=prototype&e=tar.gz",
+        "grunt-UI-tasks":"https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/service/local/artifact/maven/content?g=ui&a=grunt-UI-tasks&v=0.0.2&r=prototype&e=tar.gz",
+        "shelljs":"https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/service/local/artifact/maven/content?g=ui&a=shelljs&v=0.0.7&r=prototype&e=tar.gz"
+    }
+}

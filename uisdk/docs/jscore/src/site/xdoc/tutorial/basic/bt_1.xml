@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+<title>Intro</title>
+</properties>
+<body class="mceContentBody wiki-content fullsize">
+<h1>1. Intro</h1>
+<p>
+	&nbsp;
+</p>
+<h2>What you will achieve in this tutorial?</h2>
+<p>
+	We will follow this structure and achieve following:
+</p>
+<ol>
+	<li>Intro - know what JS Core Framework is</li>
+	<li>Setup - Get a basic idea of how to attach jsCore to your project</li>
+	<li><a href="http://confluence-oss.lmera.ericsson.se/display/TORFTUI/4.+Exercise1%3A+develop+simple+application">Exercise1: develop simple application</a>- practical exercise</li>
+	<li><a href="http://confluence-oss.lmera.ericsson.se/pages/viewpage.action?pageId=14257240">Exercise2: multiple places &amp; applying CSS</a>- practical exercise</li>
+</ol>
+<p>
+	By the end of this tutorial you will be able to design a basic application with jsCore.
+</p>
+<h2>What You Should Already Know</h2>
+<p>
+	Before you start developing with JS Core Framework, you should have a <strong>basic</strong> knowledge of:
+</p>
+<ul>
+	<li><a href="http://www.w3schools.com/html/html5_intro.asp">HTML5</a></li>
+	<li><a href="http://www.w3schools.com/css/">CSS</a></li>
+	<li><a href="http://www.w3schools.com/js/default.asp">Javascript</a></li>
+</ul>
+<p>
+	Also it would be beneficial to know:
+</p>
+<ul>
+	<li><a href="http://jquery.com/">JQuery</a></li>
+	<li><a href="http://requirejs.org/">Require.js</a></li>
+	<li><a href="http://backbonejs.org/">Backbonejs</a></li>
+</ul>
+<p>
+	Handy for advanced users:
+</p>
+<ul>
+	<li><a href="http://lesscss.org/">LESS CSS</a></li>
+</ul>
+<h2>What is JS Core?</h2>
+<p>
+	JS Core Framework is a JavaScript library. It's purpose is to provide the right structure to make it easier to build large scalable modular JavaScript applications using MVP pattern. It provides wrappers for task driven tools, as well as sandbox environment where modules of the application are being spawn and controlled.
+</p>
+<h2>Why use JS Core Framework?</h2>
+<div class="O">
+	<ul>	
+		<li>Its based on small independent modules</li>
+		<li>Core modules are reusable</li>
+		<li>New modules can be implemented with a short turnaround</li>
+	</ul>
+</div>
+<h2>Supported Browsers</h2>
+<ul>
+	<li>Mozilla Firefox version ....</li>
+	<li>Chrome (Windows7 &amp; XP)</li>
+	<li>Safari</li>
+</ul>
+<p>
+	&nbsp;
+</p>
+<p>
+	Next Chapter: <a href="bt_2.html">2. Setup</a>
+</p>
+</body>
+</document>

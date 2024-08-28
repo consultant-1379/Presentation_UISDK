@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  <bannerLeft>
+    <name>Documentation</name>
+    <src>images/jscore.png</src>
+    <href>http://www.ericsson.com/</href>
+  </bannerLeft>
+  
+  <publishDate position="right"/>
+  
+  <bannerRight>
+    <src>images/logo.png</src>
+  </bannerRight>
+  <body>
+    <links>
+    	<item name="Report bugs" href="${jira.url}"/>
+    	<item name="Latest releases" href="${releases.url}"/>
+    	<item name="Nexus" href="${nexusUrl}"/>
+    </links>
+    
+    <menu name="JS Core	Framework">
+      <item name="Home" href="/index.html"/>
+	  <item name="Architecture" href="/arch.html"/>
+      <item name="Downloads &amp; dependencies" href="/d_and_d.html"/>
+      <item name="Supported browsers" href="/browsers.html"/>
+	  <item name="Restrictions" href="/restrictions.html"/>
+      <item name="FAQs" href="/faq.html"/>
+      <item name="Troubleshooting" href="/troubleshooting.html"/>
+      <item name="API documentation" href="api_docs.html"/>
+	  <item name="MultiLanguage support" href="multilang.html"/>
+      <item name="Glossary" href="/glossary.html"/>
+    </menu>
+
+	<menu name="Getting Started">
+		<item name="Basic app development" href="/tutorial/basic.html" collapse="true">
+			<item name="1. Intro" href="/tutorial/basic/bt_1.html"/>
+			<item name="2. Setup" href="/tutorial/basic/bt_2.html"/>
+			<item name="3. Basics of API" href="/tutorial/basic/bt_3.html"/>
+			<item name="4. Exercise1" href="/tutorial/basic/bt_4.html"/>
+			<item name="5. Exercise2" href="/tutorial/basic/bt_5.html"/>
+		</item>
+		<item name="Intermediate tutorial" href="todo.html" collapse="true">
+			<item name="1. Intro" href="todo.html"/>
+		</item>
+		<item name="Develop advanced apps" href="todo.html" collapse="true">
+			<item name="1. Intro" href="todo.html"/>
+		</item>
+	</menu>
+		
+	<menu name="Guidelines">
+		<item name="Javascript style guide" href="/guidelines/jsCodeStyle.html"/>
+		<item name="Best practices" href="/guidelines/best_practices.html"/>
+    </menu>
+	
+	<menu name="Related/Supported Tools">
+        <item name="UISDK" href="todo.html"/>
+		<item name="UISDK-Build" href="todo.html"/>
+    </menu>
+  </body>
+  
+	<skin>
+    	<groupId>org.apache.maven.skins</groupId>
+    	<artifactId>maven-fluido-skin</artifactId>
+    	<version>1.2.2</version>
+	</skin>
+	<custom>
+    <fluidoSkin>
+      <sourceLineNumbersEnabled>false</sourceLineNumbersEnabled>
+    </fluidoSkin>
+  </custom>
+</project>

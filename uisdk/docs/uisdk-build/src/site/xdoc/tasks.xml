@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>Task list</title>
+</properties>
+	
+<body>
+	<h1>Basic tasks</h1>
+
+    These page describes basic tasks ( for full list of available tasks use command: <pre>usidk-build --list-tasks</pre>
+
+    Notice:
+
+    <ul>
+        <li>all usage examples are for global installation only!</li>
+        <li>task have to be attached to phase in order to run!</li>
+    </ul>
+
+
+	<h2>Concat</h2>
+	<p> 
+		Used to concatenate files. <br />
+        Accepts two objects:
+        <ul>
+            <li>"files" (array of Strings representing path to files that need to be concatenated)</li>
+            <li>"target" (String representing path to target file)</li>
+        </ul>
+		Example:
+<pre>
+"concat": {
+    "files" : [
+        "src/1.txt",
+        "src/2.txt"
+    ],
+    "target" : "target/1and2.txt"
+}
+</pre>
+	</p>
+
+
+    <h2>Copy</h2>
+    <p>
+    Copies file to destination folder <br />
+    Accepts two objects:
+    <ul>
+        <li>"from" (array of Strings representing paths to files that need to be copied)</li>
+        <li>"to" (String representing path to output folder)</li>
+    </ul>
+    Example:
+<pre>
+"copy": {
+    "from" : [
+        "src/x.html",
+        "src/y.html"
+    ],
+    "to" : "target/"
+}
+</pre>
+    </p>
+	<h2>Delete</h2>
+	<p> 
+		Deletes file or folder and containing files <br />
+		Example:
+<pre>
+"delete": {
+    "target": "target/"
+}
+</pre>
+	</p>		
+	
+	<h2>Execute</h2>
+	<p> 
+		Executes command along with arguments/attributes<br />
+		Example:
+<pre>
+"execute": {
+    "command": "tools/tool.exe",
+    "attributes": [
+        "-version",
+        "-silent"
+    ]
+}
+</pre>
+	</p>		
+
+</body>
+</document>

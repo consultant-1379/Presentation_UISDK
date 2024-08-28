@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>Troubleshooting</title>
+</properties>
+	
+<body>
+	<h1>Troubleshooting</h1>
+
+	<h2>Using provided error reports</h2>
+	<p> 
+		UISDK-build provides a comprehensive error reporting system.
+        In most cases reason will be provided whenever build phase is not
+        finished successfully.
+        Example: <br/>
+        Command:
+<pre>
+C:\project1>uisdk-build -f build3.js
+</pre>
+        Result:
+<pre>
+(e): File build3.json not found
+</pre>
+        Indicates configuration file is not present.
+	</p>
+
+    <h2>Using help</h2>
+    Help can provide you with suggestions that will make troubleshooting easier.<br />
+    Usage: <pre>uisdk-build -h</pre>
+    Other helpful options:
+<pre>
+--show-configuration    shows your configuration file
+--list-phases
+</pre>
+
+    <h2>Common errors</h2>
+    <ul>
+        <li>configuration file - not a valid JSON file</li>
+        <li>invalid options/values provided for tasks</li>
+        <li>executing build from incorrect location/missing condiguration file</li>
+        <li>external tool/script not runnable in current Operating System</li>
+    </ul>
+
+
+</body>
+</document>

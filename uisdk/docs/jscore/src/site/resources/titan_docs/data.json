@@ -1,0 +1,1302 @@
+{
+    "project": {},
+    "files": {
+        "src\\Application.js": {
+            "name": "src\\Application.js",
+            "modules": {},
+            "classes": {
+                "Titan.Application": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Backbone.History.fix.js": {
+            "name": "src\\Backbone.History.fix.js",
+            "modules": {},
+            "classes": {
+                "Backbone.History": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Collection.js": {
+            "name": "src\\Collection.js",
+            "modules": {},
+            "classes": {
+                "Titan.Collection": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Element.js": {
+            "name": "src\\Element.js",
+            "modules": {},
+            "classes": {
+                "Titan.Element": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\EventBus.js": {
+            "name": "src\\EventBus.js",
+            "modules": {},
+            "classes": {
+                "Titan.EventBus": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Int.js": {
+            "name": "src\\Int.js",
+            "modules": {},
+            "classes": {
+                "Titan.Int": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\MainController.js": {
+            "name": "src\\MainController.js",
+            "modules": {},
+            "classes": {
+                "Titan.MainController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Model.js": {
+            "name": "src\\Model.js",
+            "modules": {},
+            "classes": {
+                "Titan.Model": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Place.js": {
+            "name": "src\\Place.js",
+            "modules": {},
+            "classes": {
+                "Titan.Place": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Presenter.js": {
+            "name": "src\\Presenter.js",
+            "modules": {},
+            "classes": {
+                "Titan.Presenter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\Router.js": {
+            "name": "src\\Router.js",
+            "modules": {},
+            "classes": {
+                "Titan.Router": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\View.js": {
+            "name": "src\\View.js",
+            "modules": {},
+            "classes": {
+                "Titan.View": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\core.js": {
+            "name": "src\\core.js",
+            "modules": {},
+            "classes": {
+                "_private": 1,
+                "Titan": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\globals.js": {
+            "name": "src\\globals.js",
+            "modules": {
+                "Titan": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\utils.js": {
+            "name": "src\\utils.js",
+            "modules": {},
+            "classes": {
+                "Titan.utils": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Titan": {
+            "name": "Titan",
+            "submodules": {},
+            "classes": {
+                "Titan.Application": 1,
+                "Backbone.History": 1,
+                "Titan.Collection": 1,
+                "_private": 1,
+                "Titan.Element": 1,
+                "Titan.EventBus": 1,
+                "Titan.Int": 1,
+                "Titan.MainController": 1,
+                "Titan.Model": 1,
+                "Titan.Place": 1,
+                "Titan.Presenter": 1,
+                "Titan.Router": 1,
+                "Titan": 1,
+                "Titan.View": 1,
+                "Titan.utils": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src\\utils.js",
+            "line": 1,
+            "description": "The overall object exposed to require/almond. Contains all public objects within it."
+        }
+    },
+    "classes": {
+        "Titan.Application": {
+            "name": "Titan.Application",
+            "shortname": "Titan.Application",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Application.js",
+            "line": 1,
+            "description": "Encapsulates the entire Application. Eliminates the need to manually create an Element, Router and\nMainController, and begin tracking of the hash value on the router. Triggers the initialisation of the whole app.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Contains optional properties that are added to the Application's options object.\n                        Applies special options (eventBus, container) directly to the Application.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Backbone.History": {
+            "name": "Backbone.History",
+            "shortname": "Backbone.History",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Backbone.History.fix.js",
+            "line": 1,
+            "description": "Fix for Backbone.History.\n\nFrom Backbone.js:\nAttempt to load the current URL fragment. If a route succeeds with a\nmatch, returns true. If no defined routes matches the fragment,\nreturns false.",
+            "itemtype": "method",
+            "params": [
+                {
+                    "name": "fragmentOverride",
+                    "description": "Optional parameter to override the current fragment with another",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Whether or not a matching route exists for the current fragment.",
+                "type": "Boolean"
+            }
+        },
+        "Titan.Collection": {
+            "name": "Titan.Collection",
+            "shortname": "Titan.Collection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Collection.js",
+            "line": 1,
+            "description": "Extends Backbone.Collection\nSee: [http://backbonejs.org/#Collection](http://backbonejs.org/#Collection)"
+        },
+        "_private": {
+            "name": "_private",
+            "shortname": "_private",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\core.js",
+            "line": 70
+        },
+        "Titan.Element": {
+            "name": "Titan.Element",
+            "shortname": "Titan.Element",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Element.js",
+            "line": 108,
+            "description": "Provides utility functions for dealing with adding of Widgets to containers",
+            "params": [
+                {
+                    "name": "content",
+                    "description": "The CSS selector for the element(s) to be used as container(s)",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Contains properties that are added to the Element's options object.\n                        Applies special options (name, parent) directly to the Element.",
+                    "type": "Object"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Titan.EventBus": {
+            "name": "Titan.EventBus",
+            "shortname": "Titan.EventBus",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\EventBus.js",
+            "line": 1,
+            "description": "Extends Backbone.Events.\nSee: [http://backbonejs.org/#Events](http://backbonejs.org/#Events)\nNote: The bind and unbind method aliases have been made unavailable.",
+            "is_constructor": 1
+        },
+        "Titan.Int": {
+            "name": "Titan.Int",
+            "shortname": "Titan.Int",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Int.js",
+            "line": 7,
+            "description": "Checks the browser's language setting, and finds the closest match in the supplied languages. Creates the dictionary\nfor this language, and calls init() with it.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Titan.MainController": {
+            "name": "Titan.MainController",
+            "shortname": "Titan.MainController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\MainController.js",
+            "line": 1,
+            "description": "Binds the changes in Place to a method to handle the change using options.eventBus.\nThrows error if options does not contain eventBus and container.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Contains properties that are added to the MainController's options object.\n                        Applies container directly to the MainController.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Titan.Model": {
+            "name": "Titan.Model",
+            "shortname": "Titan.Model",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Model.js",
+            "line": 1,
+            "description": "Extends Backbone.Model\nSee: [http://backbonejs.org/#Model](http://backbonejs.org/#Model)"
+        },
+        "Titan.Place": {
+            "name": "Titan.Place",
+            "shortname": "Titan.Place",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Place.js",
+            "line": 1,
+            "description": "Maps a function from a Presenter to the corresponding URI.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "args",
+                    "description": "Arguments to be passed to the Place's init method.",
+                    "type": "Array"
+                }
+            ]
+        },
+        "Titan.Presenter": {
+            "name": "Titan.Presenter",
+            "shortname": "Titan.Presenter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Presenter.js",
+            "line": 1,
+            "description": "Connects the Model to the View",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Contains optional properties that are added to the Presenter's options object.\n                        Applies special options (model, collection, eventBus, view) directly to the Presenter.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Titan.Router": {
+            "name": "Titan.Router",
+            "shortname": "Titan.Router",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\Router.js",
+            "line": 1,
+            "description": "Creates a new Backbone Router and calls the init method.\nThrows error if options does not contain eventBus and places.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Contains optional properties that are added to the Router's options object.\n                        Applies special options (eventBus, silent, places) directly to the Router.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Titan": {
+            "name": "Titan",
+            "shortname": "Titan",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\core.js",
+            "line": 1
+        },
+        "Titan.View": {
+            "name": "Titan.View",
+            "shortname": "Titan.View",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "file": "src\\View.js",
+            "line": 105,
+            "description": "Generates HTML markup based on a provided Model.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Contains properties that are added to the View's options object.\n                        Applies special options (model, collection, eventBus) directly to the View.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Titan.utils": {
+            "name": "Titan.utils",
+            "shortname": "Titan.utils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Titan",
+            "namespace": "",
+            "file": "src\\utils.js",
+            "line": 1,
+            "description": "A set of utility functions exposed by Titan"
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\Application.js",
+            "line": 37,
+            "description": "Provides access to Backbone.View.extend via _private.Utils_extend\nSee: [http://backbonejs.org/#View-extend](http://backbonejs.org/#View-extend)",
+            "itemtype": "method",
+            "name": "extend",
+            "class": "Titan.Application"
+        },
+        {
+            "file": "src\\Application.js",
+            "line": 47,
+            "description": "Adds a specified object as a child of the Application.",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The object to be added as a child",
+                    "type": "Object"
+                }
+            ],
+            "class": "Titan.Application"
+        },
+        {
+            "file": "src\\Application.js",
+            "line": 57,
+            "description": "Creates a new Router and MainController with the EventBus, places and container for the application, and\nbegins tracking changes to the route.",
+            "itemtype": "method",
+            "name": "start",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Contains optional properties to be used on start.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Titan.Application"
+        },
+        {
+            "file": "src\\Application.js",
+            "line": 83,
+            "description": "Stops the main controller and deletes it from memory.",
+            "itemtype": "method",
+            "name": "stop",
+            "class": "Titan.Application"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 5,
+            "description": "Creates a new jQuery object and assigns it to __root__.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Element_setRoot",
+            "params": [
+                {
+                    "name": "content",
+                    "description": "The content of the required element",
+                    "type": "String"
+                }
+            ],
+            "class": "_private"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 20,
+            "description": "Retrieves the jQuery object created by the Element.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Element_getRoot",
+            "return": {
+                "description": "The jQuery object representing the Element",
+                "type": "JQuery"
+            },
+            "is_constructor": 1,
+            "class": "_private"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 33,
+            "description": "Creates an array of all parts of the class name to be assigned to the Element.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Element_getNames",
+            "return": {
+                "description": "An array of name parts.",
+                "type": "Array"
+            },
+            "class": "_private"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 50,
+            "description": "Generates class name from array of parts and adds it to the root of the Element.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Element_initClassNames",
+            "class": "_private"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 65,
+            "description": "Generates and adds a class name based on a specified modifier.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Element_addClassName",
+            "params": [
+                {
+                    "name": "modifier",
+                    "description": "The name of the modifier to be added to the Element",
+                    "type": "String"
+                }
+            ],
+            "class": "_private"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 86,
+            "description": "Removes the class name related to a specified modifier.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Element_removeClassName",
+            "params": [
+                {
+                    "name": "modifier",
+                    "description": "The name of the modifier to be removed from the Element",
+                    "type": "String"
+                }
+            ],
+            "class": "_private"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 139,
+            "description": "Provides access to Backbone.View.extend via _private.Utils_extend\nSee: [http://backbonejs.org/#View-extend](http://backbonejs.org/#View-extend)",
+            "itemtype": "method",
+            "name": "extend",
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 149,
+            "description": "Called when initialising an Element. Should be overridden with any functionality needed on initialisation.",
+            "itemtype": "method",
+            "name": "init",
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 158,
+            "description": "Appends a specified Widget to the Element",
+            "itemtype": "method",
+            "name": "addWidget",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The View to be added to the Element",
+                    "type": "Titan.View"
+                }
+            ],
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 168,
+            "description": "Detaches all the children from the Element and appends a specified Widget to the Element",
+            "itemtype": "method",
+            "name": "setWidget",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The View to be set as the sole content of the Element",
+                    "type": "Titan.View"
+                }
+            ],
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 180,
+            "description": "Removes a specified View from the Element.",
+            "itemtype": "method",
+            "name": "removeWidget",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The View to be removed to the Element",
+                    "type": "Titan.View"
+                }
+            ],
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 191,
+            "description": "Updates the Element's class with the modifier name and it's value.",
+            "itemtype": "method",
+            "name": "addModifier",
+            "params": [
+                {
+                    "name": "modifier",
+                    "description": "The name of the modifier to be added",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value of the modifier to be added",
+                    "type": "String"
+                }
+            ],
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 205,
+            "description": "Removes the specified modifier from the Element's class name.",
+            "itemtype": "method",
+            "name": "removeModifier",
+            "params": [
+                {
+                    "name": "modifier",
+                    "description": "The name of the modifier to be removed",
+                    "type": "String"
+                }
+            ],
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 215,
+            "description": "Appends another Titan.Element to the Element.",
+            "itemtype": "method",
+            "name": "append",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "The Element to be appended",
+                    "type": "Titan.Element"
+                },
+                {
+                    "name": "name",
+                    "description": "A unique name to be used in the data-name attribute of the Element.",
+                    "type": "String"
+                }
+            ],
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 233,
+            "description": "Retrieves the current state of a specified modifier.",
+            "itemtype": "method",
+            "name": "getModifer",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the modifier to be returned.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The modifier value.",
+                "type": "String"
+            },
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Element.js",
+            "line": 247,
+            "description": "Applies a list of jQuery methods to Element for use in Applications. Should be called from an extension.\nDefault methods are: text, html, bind, on, off, detach, and val.",
+            "itemtype": "method",
+            "name": "jQMethods",
+            "params": [
+                {
+                    "name": "methods",
+                    "description": "An array of additional jQuery method names to be made available to Element.",
+                    "type": "Array"
+                }
+            ],
+            "class": "Titan.Element"
+        },
+        {
+            "file": "src\\Int.js",
+            "line": 81,
+            "description": "Gets an instance of a Dictionary to be used in the application. Called when Int is initialised. Empty by default,\nit should be overridden to provide functionality.",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "dict",
+                    "description": "The dictionary for use in the application.",
+                    "type": "Titan.Model"
+                }
+            ],
+            "class": "Titan.Int"
+        },
+        {
+            "file": "src\\MainController.js",
+            "line": 32,
+            "description": "Handles a change in the route, and triggers the corresponding event specified in the module",
+            "itemtype": "method",
+            "name": "onPlaceChange",
+            "params": [
+                {
+                    "name": "place",
+                    "description": "The Place object we wish to change to.",
+                    "type": "Titan.Place"
+                }
+            ],
+            "class": "Titan.MainController"
+        },
+        {
+            "file": "src\\MainController.js",
+            "line": 55,
+            "description": "Stops the application from listening to place changes.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "Titan.MainController"
+        },
+        {
+            "file": "src\\Place.js",
+            "line": 14,
+            "description": "Provides access to Backbone.View.extend via _private.Utils_extend\nSee: [http://backbonejs.org/#View-extend](http://backbonejs.org/#View-extend)",
+            "itemtype": "method",
+            "name": "extend",
+            "class": "Titan.Place"
+        },
+        {
+            "file": "src\\Place.js",
+            "line": 25,
+            "description": "Method called when Place is initialised. Empty by default, it can be overridden to provide functionality",
+            "itemtype": "method",
+            "name": "init",
+            "class": "Titan.Place"
+        },
+        {
+            "file": "src\\Place.js",
+            "line": 35,
+            "description": "Gets the Presenter associated with the Place",
+            "itemtype": "method",
+            "name": "getPresenter",
+            "return": {
+                "description": "The Presenter associated with the place",
+                "type": "Titan.Presenter"
+            },
+            "class": "Titan.Place"
+        },
+        {
+            "file": "src\\Place.js",
+            "line": 45,
+            "description": "Gets the ID of the Presenter associated with the Place",
+            "itemtype": "method",
+            "name": "getPresenterId",
+            "return": {
+                "description": "UID of Presenter.",
+                "type": "String"
+            },
+            "class": "Titan.Place"
+        },
+        {
+            "file": "src\\Place.js",
+            "line": 55,
+            "description": "Gets the name of the function in the Presenter to be called when the Place is changed to.",
+            "itemtype": "method",
+            "name": "getFn",
+            "return": {
+                "description": "The name of the Presenter's function to be triggered by this place.",
+                "type": "String"
+            },
+            "class": "Titan.Place"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 19,
+            "description": "Provides access to Backbone.View.extend via _private.Utils_extend\nSee: [http://backbonejs.org/#View-extend](http://backbonejs.org/#View-extend)",
+            "itemtype": "method",
+            "name": "extend",
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 29,
+            "description": "Method called when Presenter is initialised. Empty by default, it can be overridden to provide functionality",
+            "itemtype": "method",
+            "name": "init",
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 37,
+            "description": "Instantiates and returns a given class. The class is given a reference to the Presenter as a parent, and is\nadded as a child of Presenter.",
+            "params": [
+                {
+                    "name": "MyClass",
+                    "description": "The Class to be instantiated",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "An instance of MyClass",
+                "type": "*"
+            },
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 48,
+            "description": "Replaces the contents of the specified container with the current widget",
+            "itemtype": "method",
+            "name": "start",
+            "params": [
+                {
+                    "name": "container",
+                    "description": "The Element to place the widget within",
+                    "type": "Titan.Element"
+                }
+            ],
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 63,
+            "description": "Removes the View associated with the Presenter from the container",
+            "params": [
+                {
+                    "name": "container",
+                    "description": "The container that the application is currently running in.",
+                    "type": "Titan.Element"
+                }
+            ],
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 83,
+            "description": "Method called before Presenter is stopped. Empty by default, it can be overridden to provide functionality",
+            "itemtype": "method",
+            "name": "init",
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 93,
+            "description": "Gets the parent of the View.",
+            "itemtype": "method",
+            "name": "parent",
+            "return": {
+                "description": "The parent of the Presenter",
+                "type": "*"
+            },
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 100,
+            "description": "Adds a child to the View.",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The child to be added to the Presenter",
+                    "type": "*"
+                }
+            ],
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 107,
+            "description": "Binds a callback to an event name that can be triggered elsewhere.\nSee: [http://backbonejs.org/#Events-on](http://backbonejs.org/#Events-on)",
+            "itemtype": "method",
+            "name": "on",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Key for the event",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "Callback to be executed when event is triggered",
+                    "type": "Function"
+                },
+                {
+                    "name": "context",
+                    "description": "Specifies the context in which the callback should execute",
+                    "type": "*",
+                    "optional": true
+                }
+            ],
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 117,
+            "description": "Unbinds an existing callback from an event name.\nSee: [http://backbonejs.org/#Events-off](http://backbonejs.org/#Events-off)",
+            "itemtype": "method",
+            "name": "off",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Key for the event",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "callback",
+                    "description": "Callback to be executed when event is triggered",
+                    "type": "Function"
+                },
+                {
+                    "name": "context",
+                    "description": "Specifies the context in which the callback should execute",
+                    "type": "*",
+                    "optional": true
+                }
+            ],
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Presenter.js",
+            "line": 127,
+            "description": "Triggers an existing callback for an event name.\nSee: [http://backbonejs.org/#Events-off](http://backbonejs.org/#Events-off)",
+            "itemtype": "method",
+            "name": "off",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Key for the event",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "*args",
+                    "description": "An optional array of arguments for the event's callback method",
+                    "type": "Array",
+                    "optional": true
+                }
+            ],
+            "class": "Titan.Presenter"
+        },
+        {
+            "file": "src\\Router.js",
+            "line": 31,
+            "description": "Method called when Router is initialised. Adds all the routes to the Router for each Place.",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "places",
+                    "description": "An array of all places within an application to be bound to the router.",
+                    "type": "Array"
+                }
+            ],
+            "class": "Titan.Router"
+        },
+        {
+            "file": "src\\Router.js",
+            "line": 66,
+            "description": "Triggers a PlaceChangeEvent on the EventBus with a specified Place",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_placeHandler",
+            "params": [
+                {
+                    "name": "Place",
+                    "description": "The Place to be instantiated and passed to the PlaceChangeEvent",
+                    "type": "Place"
+                }
+            ],
+            "class": "Titan.Router"
+        },
+        {
+            "file": "src\\Router.js",
+            "line": 80,
+            "description": "Starts listening to the hashchange event and starts dispatching routes.",
+            "itemtype": "method",
+            "name": "handleCurrentState",
+            "class": "Titan.Router"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 5,
+            "description": "Gets the jQuery Element for the root of the view",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "View_getRoot",
+            "return": {
+                "description": "The jQuery Element for the root of the view",
+                "type": "JQuery"
+            },
+            "class": "_private"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 17,
+            "description": "Checks that the element's data-name is unique, checks for data-widget and loads the specified widget if exists.\nChecks for data-type and groups elements of the same type together.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "View_parseByNames",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "The index of the element (needed as method is used as callback for $.each)",
+                    "type": "Number"
+                },
+                {
+                    "name": "element",
+                    "description": "The element to be processed",
+                    "type": "HTMLElement"
+                }
+            ],
+            "class": "_private"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 78,
+            "description": "Loops through all bindable widgets and binds changes in a specified model to their equivalent property.\nUse the data-bind attribute in your template to bind the corresponding property in the model.",
+            "itemtype": "method",
+            "name": "uiBinding",
+            "params": [
+                {
+                    "name": "view",
+                    "description": "The View that contains the bindable widgets",
+                    "type": "Titan.View"
+                },
+                {
+                    "name": "model",
+                    "description": "The Model to be bound to the View",
+                    "type": "Titan.Model"
+                }
+            ],
+            "class": "Titan"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 165,
+            "description": "Provides access to Backbone.View.extend via Utils_extend\nSee: [http://backbonejs.org/#View-extend](http://backbonejs.org/#View-extend)",
+            "itemtype": "method",
+            "name": "extend",
+            "class": "Titan.View"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 176,
+            "description": "Generates HTML markup based on a template and model",
+            "itemtype": "method",
+            "name": "template",
+            "params": [
+                {
+                    "name": "context",
+                    "description": "of view to be applied to the template"
+                }
+            ],
+            "return": {
+                "description": "The markup generated by the template",
+                "type": "String"
+            },
+            "class": "Titan.View"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 187,
+            "description": "Triggered when rendering the View. Checks if it the View is already rendered. If it is, it will remove all\nevents from the View, re-render it, and apply events back to it, otherwise it will render it normally.",
+            "itemtype": "method",
+            "name": "render",
+            "return": {
+                "description": "This View is returned to allow for chained methods.",
+                "type": "View"
+            },
+            "class": "Titan.View"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 207,
+            "description": "Method called after the View is initialised. Empty by default, it can be overridden to provide functionality",
+            "itemtype": "method",
+            "name": "init",
+            "class": "Titan.View"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 216,
+            "description": "Removes the View from the DOM.",
+            "itemtype": "method",
+            "name": "stop",
+            "class": "Titan.View"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 228,
+            "description": "Gets the parent of the View.",
+            "itemtype": "method",
+            "name": "parent",
+            "return": {
+                "description": "The parent of the View",
+                "type": "*"
+            },
+            "class": "Titan.View"
+        },
+        {
+            "file": "src\\View.js",
+            "line": 235,
+            "description": "Adds a child to the View.",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The child to be added to the View",
+                    "type": "*"
+                }
+            ],
+            "class": "Titan.View"
+        },
+        {
+            "file": "src\\core.js",
+            "line": 5,
+            "description": "Allows low level access to Titan in order to create extensions.\nSee [Confluence](http://confluence-oss.lmera.ericsson.se/display/TORFTUI/Client+framework+API+Documentation#ClientframeworkAPIDocumentation-extendtitan) for instructions on how to create an extension.",
+            "itemtype": "method",
+            "name": "extension",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "An anonymous function that wraps extension logic. The first param in this function will give\n                     access to $, _, Backbone, Handlebars, and _private. This function also has direct access to Titan.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Titan"
+        },
+        {
+            "file": "src\\core.js",
+            "line": 23,
+            "description": "Creates a new instance of a specified object with a reference to the specified parent, and adds itself as a child of\nthe specified parent.",
+            "itemtype": "method",
+            "name": "create",
+            "params": [
+                {
+                    "name": "MyClass",
+                    "description": "The object we want to create an instance of",
+                    "type": "Object"
+                },
+                {
+                    "name": "parent",
+                    "description": "The parent that this object should be a child of",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "The initialised object",
+                "type": "*"
+            },
+            "class": "Titan"
+        },
+        {
+            "file": "src\\core.js",
+            "line": 38,
+            "description": "Traverses up the parent/child tree until it gets to the root Application.",
+            "itemtype": "method",
+            "name": "Utils_getApplication",
+            "return": {
+                "description": "The root Application",
+                "type": "Titan.Application"
+            },
+            "class": "Titan"
+        },
+        {
+            "file": "src\\core.js",
+            "line": 78,
+            "description": "Provides access to Backbone.View.extend\nSee: [http://backbonejs.org/#View-extend](http://backbonejs.org/#View-extend)",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Utils_extend",
+            "class": "_private"
+        },
+        {
+            "file": "src\\core.js",
+            "line": 88,
+            "description": "Applies special properties directly to the callee.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "Utils_configure",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "A JavaScript object with properties to be added to the callee's options object",
+                    "type": "Object"
+                },
+                {
+                    "name": "names",
+                    "description": "The names of properties to be applied directly to the callee from the options object",
+                    "type": "Array"
+                }
+            ],
+            "class": "_private"
+        },
+        {
+            "file": "src\\globals.js",
+            "line": 26,
+            "description": "Remove libraries from global space",
+            "class": "Titan.utils"
+        },
+        {
+            "file": "src\\utils.js",
+            "line": 8,
+            "description": "If args is a collection, it will be converted to an Array. If an index is specified, only items from that\nindex onwards will be in the returned Array.",
+            "itemtype": "method",
+            "name": "getListFromArguments",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "The array or collection to be sliced",
+                    "type": "Array"
+                },
+                {
+                    "name": "index",
+                    "description": "The index to slice the array from",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "The sliced array",
+                "type": "Array"
+            },
+            "class": "Titan.utils",
+            "module": "Titan"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nInstantiates and returns a given class. The class is given a reference to the Presenter as a parent, and is\nadded as a child of Presenter.",
+            "line": " src\\Presenter.js:37"
+        },
+        {
+            "message": "Missing item type\nRemoves the View associated with the Presenter from the container",
+            "line": " src\\Presenter.js:63"
+        },
+        {
+            "message": "Missing item type\nRemove libraries from global space",
+            "line": " src\\globals.js:26"
+        }
+    ]
+}

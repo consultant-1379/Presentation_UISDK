@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font: 12px Arial;
+}
+
+a {
+    color: #4c68a9;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.global-Header {
+    background: #edf0f9;
+    border-bottom: 2px solid #4c68a9;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.global-Menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Emulates clear after LI */
+}
+
+.global-Menu li {
+    float: left;
+    padding-right: 10px;
+}
+
+.global-Content {
+    /*padding: 10px;*/
+}

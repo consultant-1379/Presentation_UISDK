@@ -1,0 +1,19 @@
+# Glogabl .gitingore specifically for UISDK project #
+
+
+# InteliJ files #
+worskpace.xml
+.idea/
+*.iml
+
+# Build Folders
+target/
+
+# Dev Dependencies
+grunt/
+grunt-contrib-clean/
+grunt-UI-tasks/
+shelljs/
+
+#NPM
+npm-debug.log

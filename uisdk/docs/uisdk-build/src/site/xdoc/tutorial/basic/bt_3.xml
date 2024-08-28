@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+    <title>Conditional properties</title>
+</properties>
+
+<body>
+    <h1>Conditional properties</h1>
+
+    <h2>Variable based on OS</h2>
+    <p>
+        In "build.json" you can specify variables based on conditions.
+        Currently only one type of condition is supported (based on Operating System).
+        But in the future there will be a mechanism provided to add new types
+        of conditions.
+    </p>
+    <p>
+        Usage:
+        ... in "build.json" define your properties like this:
+<pre>
+"properties": {
+    "buildDir": {
+        "?os.platform=windows": "target",
+        "?os.platform=unix": "unixtarget"
+    }
+}
+</pre>
+    </p>
+
+    <h2>Analyse the outcome</h2>
+    <p>
+        In order to analyse how this variable will change depending on operating system, lets create another phase,
+        that will make use of this variable.
+    </p>
+    <p>
+        Add to new phase to "build.json":
+<pre>
+"copySomething": {
+    "copy": {
+        "from": ["build.json"],
+        "to": "$(buildDir)/"
+    }
+}
+</pre>
+        Remember this phase should go inside "phases" object (valid JSON applies).<br />
+        Execute this phase only:
+<pre>
+uisdk-build copySomething
+</pre>
+        Once executed verify the name of folder into which "build.json" was
+        copied during "copySomething" phase.
+    </p>
+    <br /><br />
+
+
+</body>
+</document>

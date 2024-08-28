@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>Project structure</title>
+</properties>
+	
+<body>
+	<h1>Project structure</h1>
+
+	<h2>File structure:</h2>
+    Recommended file structure:
+<pre>
+[Project Root]
+    [src]
+    [node_modules]
+    [target]
+    [test]
+        index.html
+    [tools]
+    build.json
+    package.json
+</pre>
+    <p>
+        <br />
+        [src] -  holds any code that is developed in the project<br />
+        [node_modules] - default location for npm installed modules<br />
+        [target] - only folder allowed to change during the build process<br />
+        [test]  -  test source files<br />
+        [test]/index.html  -  enables test preview in a web browser<br />
+        [tools] - additional tools/libraries/executables<br />
+        build.json - project configuration file<br />
+        package.json - package descriptor (to be used with NPM)<br />
+    </p>
+    <br /><br />
+</body>
+</document>

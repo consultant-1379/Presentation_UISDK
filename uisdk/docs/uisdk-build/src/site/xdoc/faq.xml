@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>FAQ</title>
+</properties>
+	
+<body>
+	<h1>FAQ's</h1>
+
+	<h2>Can I use UISDK-build with non-javascript project?</h2>
+	<p> 
+		I don't see why not, as long as your project environment supports node.js.
+	</p>
+
+    <h2>What else is shipped with UISDK-build package?</h2>
+    <p>
+        As of version 0.0.6 package contains:
+        <ul>
+            <li>Nodejs executable (Linux and Windows)</li>
+            <li>Phantomjs executable (Linux and Windows) - headless web browser </li>
+            <li>Jasmine library - javascript based testing framework</li>
+            <li>
+                JSCore executable (Linux and Windows)- provides test coverage for
+                javascript based tests (compatible with Jasmine)
+            </li>
+        </ul>
+    </p>
+
+</body>
+</document>

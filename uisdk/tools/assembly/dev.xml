@@ -1,0 +1,14 @@
+<assembly>
+  <id>dev</id>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <baseDirectory>package</baseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>package-dev</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>

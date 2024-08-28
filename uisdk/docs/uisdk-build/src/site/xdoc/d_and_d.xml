@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Downloads &amp; dependencies</title>
+	</properties>
+	
+	
+<body>
+	<h1>Download &amp; setup</h1>
+
+	
+	<h2>Recommended installation (Global - NPM install)</h2>
+	<p> 
+		Install uisdk-build using npm from provided URL:
+	</p>
+	<p> 
+		Open your bash/cmd (in any location):
+		<pre>npm install -g &#60;tarball url&#62;
+		</pre>
+		... uisdk-build will be installed globally and available from any location on this machine.
+		This command can also be used by providing path to local file instead URL 
+		(if you choose to download uisdk-build package from a direct link).
+	</p>	
+	
+
+	<h2>Installation from provided NPM registry (Global - NPM install)</h2>
+	<p> 
+		Install uisdk-build from a npm compatible registry that contains uisdk-build package:
+	</p>	
+	<p> 
+	Open your bash/cmd (in any location):
+	<pre>npm --registry http://myRegistry/ install -g uisdk-build
+	</pre>
+	... uisdk-build will be installed globally and available from any location on this machine.
+	</p>
+
+	
+	<h2>Local NPM install (not recommended)</h2>
+	<p> 
+	While in project root:
+	<pre>npm --registry http://myRegistry/ install uisdk-build
+	</pre>
+	... installation will create "node_modules" folder in project root.
+	</p>	
+	<p>
+		Advanced users may choose to install UISDK-buidl this way. In this case master script will be located at: 
+		project_root/node_modules/uisdk-build/src/build.js
+	</p>
+
+	
+	<h2>Direct Download Link</h2>
+	<p> 
+		You can download UISDK-Build in npm package format from below location:
+		<a href="https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/repositories/prototype/ui/uisdk-build/0.0.6/uisdk-build-0.0.6.tgz">
+			UISDK-Build v0.0.6 (from Nexus)
+		</a>
+	</p>
+
+	<h2>Dependencies</h2>
+	<p> 
+		All dependencies are bundled together with UISDK-build therefore developer does not need to worry about them.
+		However in order to run machine needs to have installed:
+		<ul>
+			<li>Node.js installed and present in global path</li>
+			<li>NPM installed (ussualy bundled with Node.js)</li>
+		</ul>
+	</p>	
+</body>
+</document>

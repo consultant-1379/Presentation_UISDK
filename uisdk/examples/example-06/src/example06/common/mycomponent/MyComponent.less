@@ -1,0 +1,58 @@
+.example06 {
+
+    &-MyComponent {
+        border: 2px solid green;
+
+        .title(){
+            padding: 0.2em 12px 0.1em;
+            background: #05d;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        &-inner {
+            padding: 10px;
+        }
+
+        &-title {
+            padding: 0.2em 12px 0.4em;
+            background: green;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        &-list {
+            border: 2px solid #05d;
+            padding: 10px;
+
+            &Title {
+                .title;
+            }
+        }
+
+        &-container {
+            border: 2px solid #05d;
+            padding: 10px;
+
+            &Title {
+                .title;
+            }
+        }
+
+        .custom(@color){
+            padding: 2px 10px 3px;
+            background: @color;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        &-primary {
+            .custom(#ff2244);
+        }
+
+        &-secondary {
+            .custom(#23d8ff);
+        }
+    }
+}

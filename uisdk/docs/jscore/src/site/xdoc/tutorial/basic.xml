@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Getting Started</title>
+	</properties>
+	
+	
+<body>
+	<div class="section">
+		<h2>Basic App Development<a name="Basic_App_Development"></a></h2>
+		<p><a href="./basic/bt_1.html">1. Intro</a></p>
+		<p><a href="./basic/bt_2.html">2. Setup</a></p>
+		<p><a href="./basic/bt_3.html">3. Places, Presenters and Views</a></p>
+		<p><a href="./basic/bt_4.html">4. Exercise1: develop simple application</a></p>
+		<p><a href="./basic/bt_5.html">5. Exercise2: multiple places, applying CSS</a></p></div>
+</body>
+
+</document>

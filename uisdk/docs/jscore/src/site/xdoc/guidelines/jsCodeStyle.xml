@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Style Guide</title>
+	</properties>
+	
+	
+<body class="mceContentBody wiki-content fullsize">
+	<p>
+		&nbsp;
+	</p>
+	<h2><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></h2>
+	<p>
+		Where possible, we should follow Google's JavaScript style guide. These provide a good base to build a ruleset upon and address many issues JavaScript developers may come across during development. However, given the nature of our JavaScript, we must add other rules to better structure our JavaScript. Wherever the following rules contradict Google's rules, follow these rules.
+	</p>
+	<h2>Indentation</h2>
+	<p>
+		When indenting, be sure to use 4 spaces per indentation. You can set up your IDE to allow for this. Do not use tabs, as a mixture of space indentation and tab indentation can cause merging issues.
+	</p>
+	<h2>Code Block Formatting</h2>
+	<p>
+		When starting code blocks (conditionals, loops, functions), always place the opening curly brace at the end of the line containing the conditional, loop or function name, with a space between it and the preceding closing bracket. The closing curly brace should be on its own line, in line with the opening of the block. A space should also appear before the opening bracket. Else and else ifs should appear on one line, alongside the closing curly braces of the previous block.
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tbody>
+	<tr>
+		<td class="wysiwyg-macro-body">
+<pre>
+function sampleFunction (sampleParam, somethingElse) {
+	if (sampleParam) {
+		//Do stuff 
+	} else if (somethingElse) {
+		//Do something else } 
+}
+</pre>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	<h2><span style="color: rgb(0,51,102);">TO DO:</span> Class naming convention</h2>
+	<h2>Variable naming for&nbsp;instantiated&nbsp; objects</h2>
+	<ol>
+		<li>
+		<p>
+			When instantiating an object of a Class with a <strong>simple</strong> name eg Component, Dog, Person): we use lower case letters and reflect the Class type exactly.&nbsp;e.g.
+		</p>
+		<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+		<tbody>
+		<tr>
+			<td class="wysiwyg-macro-body">
+<pre>
+var component = new Component(); 
+var person = new Person();
+</pre>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		</li>
+		<li>When instantiating an object of a Class with a <strong>complex</strong> name (consisting of 2 or more words, eg SidebarPresenter):&nbsp;<br />
+		<ol>
+			<li>
+			<p>
+				you are suggested to shorten the variable name, to the point where it still suggests the object type:&nbsp;
+			</p>
+			<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+			<tbody>
+			<tr>
+				<td class="wysiwyg-macro-body">
+<pre>
+var sidebarP = new SidebarPresenter();
+</pre>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+			</li>
+			<li>
+			<p>
+				We have to make sure that we consider differentiating from other Class types when shortening names of variables:<br />
+				<br />
+			</p>
+			<p>
+				GOOD:
+			</p>
+			<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+			<tbody>
+			<tr>
+				<td class="wysiwyg-macro-body">
+<pre>
+var sidebarP = new SidebarPresenter(); 
+var simulatorP = new SimulatorPresenter();
+</pre>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+			<p>
+				<br />
+				WRONG:
+			</p>
+			<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+			<tbody>
+			<tr>
+				<td class="wysiwyg-macro-body">
+<pre>
+var sPresenter = new SidebarPresenter(); 
+var sPresenter = new SimulatorPresenter();
+</pre>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+			</li>
+		</ol>
+		</li>
+		<li>
+		<p>
+			<strong>If</strong> we believe <strong>Class name does not reflect object&nbsp;behavior:</strong>
+		</p>
+		<p>
+			.. we <strong>shouldn't</strong> try to fix the problem by assigning more suitable variable name. eg.
+		</p>
+		<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+		<tbody>
+		<tr>
+			<td class="wysiwyg-macro-body">
+<pre>
+var component = new ComponentPresenter();
+</pre>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<p>
+			<strong>Instead</strong> you have to change the Class name to one that's more appropriate for object&nbsp;behavior.
+		</p>
+		<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+		<tbody>
+		<tr>
+			<td class="wysiwyg-macro-body">
+<pre>
+var component= new Component();
+</pre>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<p>
+			or<strong> if changing the Class name is not possible</strong>, send feedback to provider of the Class and still use:
+		</p>
+		<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+		<tbody>
+		<tr>
+			<td class="wysiwyg-macro-body">
+<pre>
+var componentPresenter= new ComponentPresenter();
+</pre>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		</li>
+		<li>
+		<p>
+			<strong>If we instantiate more than one instance of a Class</strong>, we <strong>should</strong> indicate separate&nbsp;instances&nbsp;by numbers at the end:
+		</p>
+		<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+		<tbody>
+		<tr>
+			<td class="wysiwyg-macro-body">
+<pre>
+var fPerson1 = new FlyingPerson(); 
+var fPerson2 = new FlyingPerson();
+</pre>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<p>
+			It is also considered <strong>appropriate</strong> to apply this rule if we only instantiate one object of a specific Class.
+		</p>
+		</li>
+	</ol>
+	<h2>Handling scope</h2>
+	<p>
+		Scope can be very problematic for JavaScript developers, so it's important to handle it in a clean fashion.
+	</p>
+	<p>
+		Avoid using&nbsp;
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tbody>
+	<tr>
+		<td class="wysiwyg-macro-body">
+<pre>
+var self = this;
+</pre>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	<p>
+		to reference another context within a function. Instead, JavaScript 1.8.5 offers a Function.bind method. This results in cleaner code.
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tbody>
+	<tr>
+		<td class="wysiwyg-macro-body">
+<pre>
+// Do this 
+var BankClass = { 
+	getAccount: function (accountNumber) { 
+		return new Account(accountNumber); 
+	}, 
+	init: function () { 
+		var accountNumbers = [841,786,189,764,713]; 
+		_.each(accountNumbers, function (accountNumber) {
+			var account = this.getAccount(accountNumber); 
+			account.printDetails();
+		}
+		.bind(this)); 
+	} 
+} 
+&nbsp; 
+// Don't do this 
+var BankClass = { 
+	getAccount: function (accountNumber) { 
+		return new Account(accountNumber); 
+	}, 
+	init: function () {
+		var accountNumbers = [841,786,189,764,713]; 
+		var self = this; 
+		_.each(accountNumbers, function (accountNumber) 
+		{ 
+			var account = self.getAccount(accountNumber); 
+			account.printDetails(); 
+		}); 
+	} 
+}
+</pre>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	<p>
+		This makes it easier to see what context a specific function is running in, and eliminates errors caused by mixing up self and this.
+	</p>
+	<h2>Work with View in Presenter</h2>
+	<p>
+		Avoid the usage of elements directly inside Presenters by accessing them via the view variable. Create necessary getters and setters in View and use them in Presenter. UI logic, such as addModifier(), removeModifier(), etc. should be moved to the View.
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript|title=Code example, Presenter" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6dGl0bGU9Q29kZSBleGFtcGxlLCBQcmVzZW50ZXJ8bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tbody>
+	<tr>
+		<td class="wysiwyg-macro-body">
+<pre>
+&nbsp;define([ 
+	'Titan', './AppListView', 
+	'./emptyfavorites/EmptyFavoritesPresenter', 
+	'./column/ColumnPresenter', 
+	'./header/HeaderPresenter', 
+	'./listitem/ListItemPresenter' 
+], 
+function (Titan, View, EmptyFavorites, Column, Header, ListItem) { 
+&nbsp; 
+	return Titan.Presenter.extend({ 
+		init: function () { 
+			this.view = new View(); &nbsp; 
+			// private variables 
+			this.appList = []; 
+			this.appsColumnViews = []; 
+			this.parentHeight = 0; 
+			this.currentColumnView = null; 
+			this.doResizeTimeout = null; 
+			this.collection.on('reset', this.onLoad, this); 
+			&nbsp; 
+			this.view.getContainer().on('scroll', this.onScroll.bind(this)); 
+			this.view.getScrollLeft().on('click', this.goodExampleOfUsage.bind(this)); 
+			this.view.getScrollRight().on('click', this.badExampleOfUsage.bind(this)); 
+		}, 
+		&nbsp; 
+		onScroll: function () { this.checkScrollers(); }, 
+		&nbsp; 
+		goodExampleOfUsage: function () { 
+			var appListWidth = this.view.getAppListHolder().width(); 
+			var scrollDelta = appListWidth; 
+			&nbsp; 
+			this.view.animateContainerScrollLeft(scrollDelta, this.checkScrollers.bind(this)) 
+		}, 
+		badExampleOfUsage: function () { 
+			var appListWidth = this.view['appListHolder'].width(); 
+			var scrollDelta = appListWidth; 
+			this.view.container.animate({ scrollLeft: scrollDelta }, 300, 'linear', function () { 
+				this.checkScrollers.bind(this) 
+			}); 
+		}, 
+		&nbsp; 
+		checkScrollers: function () { // some stuff } 
+	}); 
+});
+</pre>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	<p>
+		Example for View class:
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript|title=Code example, View" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6dGl0bGU9Q29kZSBleGFtcGxlLCBWaWV3fGxhbmd1YWdlPWphdmFzY3JpcHR9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tbody>
+	<tr>
+		<td class="wysiwyg-macro-body">
+<pre>
+&nbsp;define([ 
+	'Titan', 
+	'template!./AppList.html',
+	'styles!./AppList.less' 
+], 
+function (Titan, template, styles) { 
+	var AppList = Titan.View.extend({ 
+		template: template, 
+		styles: styles, 
+		&nbsp; 
+		getRoot: function () { 
+			return this.root; 
+		}, 
+		getFavIcon: function () { 
+			return this[SearchItem.EL_FAV_ICON]; 
+		}, 
+		getContainer: function () { return this[AppList.EL_CONTAINER]; }, 
+		getAppListHolder: function () { return this[AppList.EL_APP_LIST_HOLDER]; }, 
+		&nbsp; 
+		getContainerOuterWidth: function () { return this.getContainer().outerWidth(true); },
+		&nbsp; 
+		animateContainerScrollLeft: function (scrollLeft, callback) { 
+			this.getContainer().animate(
+				{ scrollLeft: scrollLeft }, 
+				300, 
+				'linear', 
+				function () { callback() }
+			); 
+		}, 
+		&nbsp;
+		showWarningMessage: function () { 
+			this.getContainer().hide(); 
+			this.getWarningMessage().show(); 
+		}, 
+		&nbsp; 
+		addElement: function (element) { this.getAppList().addWidget(element); }, 
+		&nbsp; 
+		setAppListHolderWidth: function (width) { this.getAppListHolder().width(width); }, 
+		&nbsp; 
+		setFavIconState: function (state) { this.getFavIcon().addModifier(SearchItem.MOD_FAVORITED, state); }, 
+		setLinkItemState: function (state) { this.getRoot().addModifier(SearchItem.MOD_SELECTED, state); } 
+		&nbsp; 
+	}, 
+	{ 
+		EL_WARNING_MESSAGE: 'warningMessage', 
+		EL_CONTAINER: 'container', 
+		EL_FAV_ICON: 'favIcon', 
+		MOD_FAVORITED: 'favorited', 
+		MOD_SELECTED: 'selected' 
+	}); 
+	return AppList; 
+});
+</pre>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	<h2>Require.js</h2>
+	<p>
+		When using Require.js, we write all our code as Require.js modules. When importing other JavaScript files, we place each file on a new line, indented in 4 spaces. e.g.
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tbody>
+	<tr>
+		<td class="wysiwyg-macro-body">
+<pre>
+define([ 
+	'Titan', 
+	'./ListItemView', 
+	'./tooltip/TooltipPresenter' 
+], 
+function (Titan, View, Tooltip) { 
+	// return an object in here 
+});
+</pre>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	<h2>Creating private methods and variables</h2>
+	<p>
+		JavaScript as is creates all methods in a public scope. There are methods of making private methods within an object though. We utilise Require.js to allow for this, although it could be adapted for other use cases. When using define in Require.js, we must return an object in the callback. As the callback runs in its own scope, we can create functions directly within it that will never reach the public scope. However, these need to be accessible from the returned object.
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tbody>
+	<tr>
+		<td class="wysiwyg-macro-body">
+<pre>define([
+	'Titan',
+	'ComponentView'
+], function (Titan, View) {	
+&nbsp;
+	function privateMethod () {
+
+	}
+	&nbsp;
+	function privateMethodWithParam (param) {
+        if (param == this.selectedView) {
+            // do stuff
+        }
+        privateMethod.call(this);
+	}
+&nbsp;
+	return Titan.Presenter.extend({
+&nbsp;
+		init: function () {
+			privateMethod.call(this);
+&nbsp;
+            this.selectedView = '';
+&nbsp;
+            privateMethodWithParam.call(this, this.selectedView);
+		}
+	});
+&nbsp;
+});</pre>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	<p>
+		In the above situation, privateMethod() is never available publicly. We use privateMethod.call(this) in order to run the private method within the object's scope.
+	</p>
+	<p>
+		&nbsp;
+	</p>
+</body>
+
+
+
+</document>

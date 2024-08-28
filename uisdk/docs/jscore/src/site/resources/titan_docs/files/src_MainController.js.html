@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\MainController.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.7.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.7.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/_private.html">_private</a></li>
+            
+                <li><a href="..&#x2F;classes/Backbone.History.html">Backbone.History</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.html">Titan</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Application.html">Titan.Application</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Collection.html">Titan.Collection</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Element.html">Titan.Element</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.EventBus.html">Titan.EventBus</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Int.html">Titan.Int</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.MainController.html">Titan.MainController</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Model.html">Titan.Model</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Place.html">Titan.Place</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Presenter.html">Titan.Presenter</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Router.html">Titan.Router</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.utils.html">Titan.utils</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.View.html">Titan.View</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/Titan.html">Titan</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src\MainController.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+ * Binds the changes in Place to a method to handle the change using options.eventBus.
+ * Throws error if options does not contain eventBus and container.
+ *
+ * @class Titan.MainController
+ * @constructor
+ * @param options {Object} Contains properties that are added to the MainController&#x27;s options object.
+ *                         Applies container directly to the MainController.
+ *&#x2F;
+&#x2F;&#x2F; TODO: Could be removed from Titan globals
+var MainController = Titan.MainController = function (options) {
+    if (options === undefined) {
+        throw new Error(&#x27;Cannot create MainController without options&#x27;);
+    }
+    if (options.container === undefined) {
+        throw new Error(&#x27;Cannot create MainController without container&#x27;);
+    }
+    if (options.application === undefined) {
+        throw new Error(&#x27;Cannot create MainController without Application&#x27;);
+    }
+
+    this.presenters = {};
+
+    this.container = options.container;
+
+    this.application = options.application;
+    this.application.localEvents.on(Names.PlaceChangeEvent, this.onPlaceChange, this);
+};
+
+MainController.prototype = {
+
+    &#x2F;**
+     * Handles a change in the route, and triggers the corresponding event specified in the module
+     *
+     * @method onPlaceChange
+     * @param place {Titan.Place} The Place object we wish to change to.
+     *&#x2F;
+    onPlaceChange: function (place) {
+        var id = place.getPresenterId(),
+            Presenter,
+            View,
+            view;
+        if (!this.presenters[id]) {
+            Presenter = place.getPresenter();
+            View = Presenter.prototype.View;
+            this.presenters[id] = Titan.create(Presenter, this.application);
+            view = Titan.create(View, this.presenters[id]);
+            this.presenters[id].view = view; &#x2F;&#x2F; TODO
+        }
+
+        this.presenters[id].start(this.container);
+        this.presenters[id][place.getFn()].call(this.presenters[id], place);
+    },
+
+    &#x2F;**
+     * Stops the application from listening to place changes.
+     *
+     * @method destroy
+     *&#x2F;
+    destroy: function () {
+        this.application.localEvents.off(Names.PlaceChangeEvent);
+    }
+
+};
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

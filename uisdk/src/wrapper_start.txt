@@ -1,0 +1,5 @@
+/*global window, define */
+(function (window) {
+    'use strict';
+
+    

@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  <bannerLeft>
+    <name>Documentation</name>
+    <src>images/uibuild.png</src>
+    <href>http://www.ericsson.com/</href>
+  </bannerLeft>
+  
+  <publishDate position="right"/>
+  
+  <bannerRight>
+    <src>images/logo.png</src>
+  </bannerRight>
+  <body>
+    <links>
+    	<item name="Report bugs" href="${jira.url}"/>
+    	<item name="Latest releases" href="${releases.url}"/>
+    	<item name="Nexus" href="${nexusUrl}"/>
+    </links>
+    
+    <menu name="UI Build">
+      <item name="Home" href="/index.html"/>
+      <item name="Download &amp; setup" href="d_and_d.html"/>
+      <item name="FAQs" href="faq.html"/>
+      <item name="Troubleshooting" href="troubleshoot.html"/>
+	  <item name="Command list" href="commands.html"/>
+      <item name="Basic Tasks" href="tasks.html"/>
+    </menu>
+
+	<menu name="Getting started">
+		<item name="Build simple project" href="/tutorial/basic.html" collapse="true">
+			<item name="1. Setup" href="/tutorial/basic/bt_1.html"/>
+			<item name="2. Configuration file" href="/tutorial/basic/bt_2.html"/>
+            <item name="3. Conditional properties" href="/tutorial/basic/bt_3.html"/>
+		</item>
+	</menu>
+		
+	<menu name="Best practices">
+		<item name="Project structure" href="/guidelines/proj_struct.html"/>
+    </menu>
+
+  </body>
+  
+	<skin>
+    	<groupId>org.apache.maven.skins</groupId>
+    	<artifactId>maven-fluido-skin</artifactId>
+    	<version>1.2.2</version>
+	</skin>
+	<custom>
+    <fluidoSkin>
+      <sourceLineNumbersEnabled>false</sourceLineNumbersEnabled>
+    </fluidoSkin>
+  </custom>
+</project>

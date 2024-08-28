@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.nms</groupId>
+        <artifactId>integration</artifactId>
+        <version>13.2.0.67</version>
+    </parent>
+
+    <groupId>com.ericsson.nms.pres</groupId>
+    <artifactId>UISDK-Build</artifactId>
+    <version>0.0.6</version>
+    <packaging>pom</packaging>
+    <properties>
+        <project.documentation.url>https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/uisdk-build</project.documentation.url>
+    </properties>
+
+    <build>
+        <plugins>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <name>Site</name>
+            <url>dav:${project.documentation.url}/${project.version}</url>
+        </site>
+    </distributionManagement>
+</project>

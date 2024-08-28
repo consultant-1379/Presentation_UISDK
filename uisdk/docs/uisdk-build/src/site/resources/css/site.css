@@ -1,0 +1,45 @@
+h1 {
+	font-size: 24px;
+	line-height: 44px;
+	margin-bottom: 6px;
+}
+
+h2 {
+	font-size: 16px;
+	line-height: 27px;
+	border-bottom: 1px solid #919699;
+	padding-bottom: 0px;
+	margin: 16px 0 18px 0;
+}
+
+h3 {
+	font-size: 13px;
+	line-height: 25px;
+	margin: 11px 0 4px 0;
+}
+
+/*li {*/
+	/*color: #156085;*/
+/*}*/
+
+
+strong {
+	font-weight: normal;
+	border-bottom: 1px solid #606296;
+}
+
+.row-fluid .span2 {
+	width: 28%px;
+}
+
+#leftColumn {
+	width: 28%px;
+}
+
+#bodyColumn {
+	width: 70%px;
+}
+
+ul, ol {
+	margin: 0 0 9px 10px;
+}

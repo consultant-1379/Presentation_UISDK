@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Setup</title>
+	</properties>
+
+<body>
+	<h1>2. Setup</h1>
+	<p>
+		This chapter is theoretical and will prepare you for the Chapter 4 exercise, please read through.
+	</p>
+	<p>
+		NOTICE: <strong>JS Core Framework</strong> is internally called &quot;<strong>Titan</strong>&quot;, therefore we will be using the &quot;Titan&quot; object when extending objects.
+	</p>
+	<p>
+		&nbsp;
+	</p>
+	<h2>Adding JS Core to your Web Application</h2>
+	<p>
+		JS Core is contained in a single JavaScript file, in order to use it you have to download it and include it in your page.
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=html/xml" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9aHRtbC94bWx9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+	<tr>
+		<td class="wysiwyg-macro-body">
+			<pre>
+				 &lt;head> &lt;script src="titan-dev-0.1.1.js">&lt;/script> &lt;/head>
+			</pre>
+		</td>
+	</tr>
+	</table>
+	<h2>Basic Example</h2>
+	<p>
+		The following example demonstrates starting an application based on jsCore.
+	</p>
+	<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=html/xml" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9aHRtbC94bWx9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+		<tr>
+			<td class="wysiwyg-macro-body">
+<pre>
+&lt;html> 
+	&lt;head>
+		&lt;title>MyApplication&lt;/title> 
+		&lt;script type="text/javascript" src="titan-dev-0.1.1.js">&lt;/script> 
+		&lt;script type="text/javascript"> 
+			require({
+				baseUrl: 'src'
+			}, ['domReady!', 'Application'], function (doc, Application) {
+				var app = new Application({
+					container: '#myContainer'
+				});
+				app.start();
+			});
+		&lt;/script> 
+	&lt;/head> 
+	&lt;body> 
+		&lt;div id="myContainer">&lt;/div> 
+	&lt;/body> 
+&lt;/html>
+</pre>
+			</td>
+		</tr>
+	</table>
+	<p>
+		The above example will not execute without a valid application source (in this case Application.js file). We will learn how to create a basic application file in the next section.
+	</p>
+	<h2>Download JS Core</h2>
+	<p>
+		There are two versions of JS Core available:
+	</p>
+	<ul style="list-style-type: square;">
+		<li>Production Version 1.1 - code is compressed and minified to run efficiently in your web application</li>
+		<li>Development Version 1.1 - this is uncompressed (readable code) for testing and development</li>
+	</ul>
+	<h4>Downloads:</h4>
+	<p>
+		Production Version: <a class="confluence-link" href="/download/attachments/14255496/titan-0.1.1-prod.js?version=1&amp;modificationDate=1355153639000" data-linked-resource-container-id="14255496" data-linked-resource-id="14221916" data-linked-resource-type="attachment" data-linked-resource-default-alias="titan-0.1.1-prod.js" data-base-url="http://confluence-oss.lmera.ericsson.se">titan-0.1.1-prod.js</a>
+	</p>
+	<p>
+		Development Version: <a class="confluence-link" href="/download/attachments/14255496/titan-0.1.1-dev.js?version=1&amp;modificationDate=1355153745000" data-linked-resource-container-id="14255496" data-linked-resource-id="14221917" data-linked-resource-type="attachment" data-linked-resource-default-alias="titan-0.1.1-dev.js" data-base-url="http://confluence-oss.lmera.ericsson.se">titan-0.1.1-dev.js</a>
+	</p>
+	<p>
+		NOTE: 0.1.1 is unstable version.
+	</p>
+	<h2>Advanced Users</h2>
+	<p>
+		Advanced users may want to download JS Core as a module using NPM (Node Package Manager) - provided they have access to an NPM registry that holds js-Core packages.
+	</p>
+	<p>
+		&nbsp;
+	</p>
+	<p>
+		Next Chapter: <a href="bt_3.html">3. Basics of API</a>
+	</p>
+        
+</body>
+</document>

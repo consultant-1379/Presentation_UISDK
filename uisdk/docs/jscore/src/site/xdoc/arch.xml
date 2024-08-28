@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Architecture</title>
+	</properties>
+	
+	
+<body class="mceContentBody wiki-content fullsize">
+        <p>&nbsp;</p>         
+		<h2>Overview</h2>
+		<p>
+			<span style="color: rgb(102,102,102);">
+				The current iteration of JavaScript (<a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA-262</a>)
+				doesn't provide developers with the means to import such modules of code
+				in a clean, organized manner.&nbsp;<span>It's one of the concerns with specifications that haven't required great 
+				thought until more recent years where the need for more organized JavaScript applications became apparent.&nbsp;<br /></span>
+			</span>
+		</p>
+		<p>
+			<span style="color: rgb(102,102,102);">
+			If working on a significantly large JavaScript application, we must remember to dedicate&nbsp; <strong>sufficient time</strong>&nbsp;to planning the underlying architecture that makes the most sense. It's often more complex than we may initially imagine. </span>
+		</p>
+		<p>
+			<span style="color: rgb(102,102,102);">Our architecture is based on small independent modules which together create large enterprise application environment. The core modules have to be reusable and in future we must have the ability to undeploy an redeploy with a short turnaround.</span>
+		</p>
+		<p>
+			Our architecture team will use best practice from large communities, the latest HTML5 technologies, and strong professional experience to create a strong basis for the application core.&nbsp;<span><span style="color: rgb(112,112,112);">The core of the&nbsp;</span><a href="http://wiki.commonjs.org/wiki/Modules/1.1.1" style="margin-left: 0.0px;">Modules specification</a><span style="color: rgb(112,112,112);">&nbsp;is relatively straight forward. Modules are&nbsp;encapsulated&nbsp;in such a way as to not conflict with each other in the global space.&nbsp;</span></span>Let's take a closer look.
+		</p>
+		<h2 class="O">UI SDK Objective</h2>
+		<div class="O">
+			<ul>
+				<li>The UI SDK architecture is based on small independent modules</li>
+				<li>The core modules are reusable</li>
+				<li>New modules can be implemented with a short turnaround</li>
+			</ul>
+			<h2 class="O">Technical Approach</h2>
+			<div>
+				<ul>
+					<li class="O">Lightweight SDK
+					<ul style="list-style-type: lower-roman">
+						<li type="i">JS core framework (MVP)</li>
+						<li class="O1">Documentation including programming guides</li>
+						<li class="O1">Examples and app templates</li>
+					</ul>
+					</li>
+					<li class="O">Common components for application dev/deployment<br />
+					<ul style="list-style-type: lower-roman">
+						<li class="O1">App Container which manages app lifecycle and provides common UI services</li>
+						<li class="O1">Brand assets (CSS and images)</li>
+						<li class="O1">Common widgets e.g.<br />
+						<ul style="list-style-type: square">
+							<li class="O2">Trees, table etc</li>
+							<li class="O2">Interactive Maps</li>
+							<li class="O2">Charting</li>
+						</ul>
+						</li>
+					</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<h2>Structure</h2>
+		<p style="margin-left: 0.0px;">
+			Our Core concept is based on a standard MV* concept.
+		</p>
+		<h3>Models</h3>
+		<p>
+			Represents the underlying, logical structure of data in a application. This object model does not contain any information about the user interface.
+		</p>
+		<h3>Presenters</h3>
+		<p>
+			Represents the classes connecting the model and the view, and is used to communicate between classes in the model and view.
+		</p>
+		<h3>Views</h3>
+		<p>
+			A view owns a DOM element, and handles DOM events (user input).
+		</p>
+		<h3>Templates</h3>
+		<p>
+			&nbsp;Represent the elements in the user interface. In our case HTML tags, buttons forms etc.
+		</p>
+		<h3 class="O">Abstraction of 3PP Libraries/Toolkits</h3>
+		<div>
+			<ul>
+				<li class="O1">Represents third party utilities which fit the requirements for the application, or sets of utilities built in-house and approved by our architecture team.</li>
+				<li class="O1">Allows the possibility to change underlying 3PPs/versions without impacting applications*</li>
+			</ul>
+			<div class="O">
+				*This is a balancing act between wrapping effort, lightweight code and desire to isolate applications from 3PP changes.
+			</div>
+		</div>
+		<p>
+			&nbsp;
+		</p>
+		<h2>Architecture</h2>
+		<p>
+			Like explained above in our architecture we use the MV* concept, and Modularity. Below is diagram of the initial application concept.
+		</p>
+		<p>
+			&nbsp;
+		</p>
+		<p>
+			<span style="color: rgb(102,102,102);">The solution to the architecture we seek to define is a combination of three well-known design patterns: the&nbsp;<strong>module</strong>,&nbsp;<strong>facade</strong>&nbsp;and&nbsp;<strong>mediator</strong>.</span>
+		</p>
+		<p>
+			<span style="color: rgb(102,102,102);">Rather than the traditional model of modules directly communicating with each other, in this decoupled architecture, they'll instead only publish events of interest (ideally, without a knowledge of other modules in the system). The mediator pattern will be used to both subscribe to messages from these modules and handle what the appropriate response to notifications should be. The facade pattern will be used to enforce module permissions.</span>
+		</p>
+		<ul>
+			<li><span style="color: rgb(102,102,102);">A Main Presenter serves as an&nbsp;<strong>abstraction</strong>&nbsp;between main functionality and our Application Blocks, Models and Views.</span></li>
+			<li><span style="color: rgb(102,102,102);">Each&nbsp;<span>Presenter&nbsp;</span>and Main&nbsp;<span>Presenter&nbsp;</span>can be used to facilitate Models, Views, other&nbsp;<span>Presenters</span>.&nbsp;</span></li>
+			<li><span style="color: rgb(102,102,102);">Each&nbsp;<span>Presenter&nbsp;</span>has a relationship only with its parent p<span>resenter&nbsp;</span>or child p<span>resenters</span>. This method attempts to ensure that if one application breaks down, the system will still function.</span></li>
+			<li><span style="color: rgb(102,102,102);">In views(templates) should not accept any coding. Views is only for visual representation of data.</span></li>
+			<li><span style="color: rgb(102,102,102);">The Models could be manipulated by Main&nbsp;<span>Presenter&nbsp;</span>or sub&nbsp;<span>Presenter</span>. Some Models could be manipulated more than one&nbsp;<span>Presenter</span>.</span></li>
+			<li><span style="color: rgb(102,102,102);">Only Models should be allowed communicate between Client and Server.</span></li>
+			<li><span style="color: rgb(102,102,102);">Only&nbsp;<span>Presenters&nbsp;</span>manipulate events and Model/View interaction.</span></li>
+			<li><span style="color: rgb(102,102,102);">Application Block encapsulates an individual standalone custom application, which is abstracted from the main core.</span></li>
+			<li><span style="color: rgb(102,102,102);">Model should only communicate with controllers for event based interaction.</span></li>
+		</ul>
+		<div>
+			<span style="color: rgb(102,102,102);"><br />
+			</span>
+		</div>
+		<div>
+			<span style="color: rgb(102,102,102);">&nbsp;</span>
+			<h2 class="O">App Structure</h2>
+		</div>
+		<div>
+			<img  width="500" src="images/arch/app-01.jpg" />
+		</div>
+		<h2 class="O">App View Structure</h2>
+		<p>
+			<img  width="500" src="images/arch/module.png" />
+		</p>
+		<h2 class="O">Widget Structure</h2>
+		<p>
+			<img  width="500" src="images/arch/widget.png" />
+		</p>
+		<h2 class="O">Gadget Structure</h2>
+		<p>
+			<img  width="500" src="images/arch/gadget.png" />
+		</p>
+		<h2>App Folders</h2>
+		<p>
+			<img  width="800" src="images/arch/folder-Structure.png" />
+		</p>
+
+    
+
+</body>
+
+
+
+</document>

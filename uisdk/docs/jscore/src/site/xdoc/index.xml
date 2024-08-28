@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Home</title>
+	</properties>
+
+
+    <body>
+        <div class="section">
+            <h2>JS Core Framework</h2>
+            <div class="section">
+                <h3>What is JS Core??</h3>
+                <p>
+                    JS Core Framework is a JavaScript library. It's purpose is to provide the right structure to make it easier to build large scalable modular JavaScript applications using MVP pattern. It provides wrappers for task driven tools, as well as sandbox environment where modules of the application are being spawn and controlled.
+                </p>
+                <img src="./images/3pp_and_arch.png" alt="Architecture View "/>
+            </div>
+            <div class="section">
+                <h3>Why use JS Core Framework?</h3>
+                <p>JS Core Framework addresses cross-cutting concerns not already addressed by
+                    JavaScript and also makes it easier to use common tasks. Also ... </p>
+                <ul>
+                    <li>Its based on small independent modules</li>
+                    <li>Core modules are reusable</li>
+                    <li>New modules can be implemented with a short turnaround</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+
+
+
+</document>

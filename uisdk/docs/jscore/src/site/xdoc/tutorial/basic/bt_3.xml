@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Basics of API</title>
+	</properties>
+
+<body class="mceContentBody wiki-content fullsize">
+
+<h1>3. Basics of API</h1>
+<p>
+	This chapter is required as a preparation for Chapter 4 exercise, please read through.
+</p>
+<p>
+	&nbsp;
+</p>
+<p>
+	Consider the below architectural structure and file structure for a web application:
+</p>
+<p>
+	<img src="../../images/tutorial/basic/arch_struct.png"/>
+	<img src="../../images/tutorial/basic/folder_struct.png"/>
+</p>
+<p>
+	By looking at the above, you can get an initial idea of what some of the components may be responsible for.
+</p>
+<ul>
+	<li>Most of the components from the diagram represent a <strong>Class</strong> provided by js-Core. As we will soon see, we make use of Classes by extending them. </li>
+</ul>
+<h2>Definitions</h2>
+<p>
+	Each Class can have many desirable behaviors, but for the purpose of this exercise we will portray a very basic definition for each Class...
+</p>
+<p>
+</p>
+<p>
+	NOTE: <strong>jsCore</strong> is internally called &quot;<strong>Titan</strong>&quot;, therefore we will be using the &quot;Titan&quot; object when extending objects,.
+</p>
+<h4>Application</h4>
+<p>
+	Application is a class that Initialise, start or stop the whole application.
+</p>
+<p>
+	Example of application declaration:
+</p>
+<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+<tr>
+	<td class="wysiwyg-macro-body">
+		<pre>return Titan.Application.extend({ 
+	places:places, 
+	namespace: "Greetings" 
+});</pre>
+	</td>
+</tr>
+</table>
+<p>
+	<strong>namespace: </strong>Unique application name, this should also be added to each CSS class in an application, to ensure style isolation
+</p>
+<h4>Place</h4>
+<p>
+	Place is considered an App View (Sub-part of an Application which has a URI)
+</p>
+<p>
+	Place map the changes in the URI hash values to the corresponding functions in their respective Presenters.<br/><br/>Place example:
+</p>
+<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+<tr>
+	<td class="wysiwyg-macro-body">
+<pre>return Titan.Place.extend({ 
+	name: 'Hello Place', 
+	pattern: 'Greetings/hello', 
+	Presenter: HelloPresenter, 
+	fn: 'sayHello', 
+	defaultPlace: true 
+});
+</pre>
+	</td>
+</tr>
+</table>
+<p>
+	<strong>pattern</strong>: is the location to where this place is mapped
+</p>
+<p>
+	<strong>fn</strong>: is an obligatory function located in the presenter, called upon place being loaded
+</p>
+<p>
+	<strong>defaultPlace</strong>: decides whether this place should be loaded upon application start
+</p>
+<h4>Presenter</h4>
+<p>
+	Class used to make modifications to the View.<br/>Presenter example:
+</p>
+<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+<tr>
+	<td class="wysiwyg-macro-body">
+		<pre>return Titan.Presenter.extend({
+	View: View, 
+	sayHello: function () { 
+		console.log("Hello!"); 
+	} 
+});</pre>
+	</td>
+</tr>
+</table>
+<h4>View</h4>
+<p>
+	Represents your html view, may link appropriate styles (either css or less format).
+</p>
+<p>
+	Example:
+</p>
+<table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT">
+<tr>
+	<td class="wysiwyg-macro-body">
+<pre>
+return Titan.View.extend({ 
+	template: template 
+});
+</pre>
+	</td>
+</tr>
+</table>
+<p>
+	<strong>template : </strong>represents function created when parsing a .html file which contains DOM structure for the view
+</p>
+<p>
+	&nbsp;
+</p>
+<p>
+	Next Chapter: <a href="bt_4.html">3. Excercise1</a>
+</p>
+<p>&nbsp;</p>
+</body>
+	
+</document>

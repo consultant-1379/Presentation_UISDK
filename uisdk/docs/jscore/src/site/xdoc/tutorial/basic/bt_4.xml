@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Exercise 1</title>
+	</properties>
+
+<body class="mceContentBody wiki-content fullsize">
+	<h1>Exercise 1</h1>
+	<p>Develop simple application.</p>
+	<p>&nbsp;</p>
+	<p>
+		<img src="../../images/tutorial/basic/arch_struct_single.png">
+		</img>
+		</p><p>By now we know, what our application structure is, and we know what some of the Classes may do for us. Let's use that knowledge to design a simple modular application (like the one above).</p><h2>Index &amp; initial folders</h2><ul><li>create our <strong>index.html</strong> in the root of the project</li><li><a href="http://confluence-oss.lmera.ericsson.se/download/attachments/14255496/js-core-0.1.1-dev.js?version=1&amp;modificationDate=1354895117188">download</a> jsCore library and place it in the root</li></ul><p>Our application will have name &quot;Greetings&quot;</p><ul><li>create &quot;src&quot; folder in the root</li><li>create &quot;<strong>Greetings</strong>&quot; folder under &quot;src&quot;</li><li>create &quot;<strong>pages</strong>&quot; folder under &quot;Greetings&quot;</li><li>create &quot;<strong>hello</strong>&quot; &amp; &quot;<strong>goodbye</strong>&quot; folders under &quot;pages&quot; (&quot;goodbye&quot; folder will be used in next exercise&quot;)</li></ul><p>We should have this in place:</p><p>
+		
+		<img src="../../images/tutorial/basic/folder_init.png"></img>
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;...notice we're developing this application with titan version 0.0.1</p><h2>Application.js</h2><p>As per the diagram on the top of this page, we need to create an Application module.</p><ul><li>let's create &quot;<strong>Application.js</strong>&quot; file and put it directly under &quot;Greetings&quot; folder.</li></ul><p>We will use &quot;Require.js&quot; notation to define &quot;Application&quot;, as an object extended from Application Class.</p><p>Application.js should look like this:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>define([
+    'Titan',
+    './pages/places'
+], function (Titan, places) {
+    return Titan.Application.extend({
+        places:places,
+        namespace: "Greetings"
+    });
+});</pre></td></tr></table><p>If you have doubts about what we just did, go back to the previous chapter and read up about Application Class.<br />We have not yet defined the &quot;<strong>places</strong>&quot; variable, so let's do it now:</p><h2>Places</h2><p>Notice when creating &quot;Application.js&quot; we have given a relative path to &quot;./pages/places&quot;:</p><ul><li>let's therefore create &quot;<strong>places.js</strong>&quot; inside &quot;pages&quot; folder.</li></ul><p>&quot;places.js&quot; should look like this:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>define([
+    'Titan',
+    './hello/HelloPlace'
+], function (Titan) {
+    // "arguments" : is an object Array-like object corresponding to the arguments passed to a function.
+    
+	return Titan.utils.getListFromArguments(arguments, 1);
+// Titan.utils.getListFromArguments(arguments,1) Framework utility which will return all arguments except the first one
+ });</pre></td></tr></table><p>We need to specify what places we want to have available for the Application (<strong>each</strong> place will be mapped to the last part of URL visible in the browser's address bar, prepended with # sign  eg: &quot;http://myHost.com/EntepriseApplication/#Greetings/hello&quot;).</p><p> </p><p>By now you have noticed that as a general rule we are using &quot;<a href="http://requirejs.org/">Require.js</a>&quot; when defining and loading modules.</p><p>In this case effectively we have decided to include only one place: </p><pre>    './hello/HelloPlace'</pre><h2>HelloPlace </h2><p>Now it's up to us to design those two places we have referred to in places.js ...</p><ul><li>let's create &quot;<strong>HelloPlace.js</strong>&quot; file first under &quot;hello&quot; folder</li></ul><p>HelloPlace.js should look somewhat like this:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>define([
+    'Titan',
+    './HelloPresenter'
+], function (Titan, HelloPresenter) {
+    return Titan.Place.extend({
+        name: 'Hello Place',
+        pattern: 'Greetings/hello',
+        Presenter: HelloPresenter,
+        fn: 'sayHello',
+        defaultPlace: true
+    });
+});</pre></td></tr></table><p>Again, refer to the previous chapter if you have doubts about the meaning of object we have extended here from the Place Class.</p><p> </p><p>Most significant here is:</p><pre>pattern: 'Greetings/hello'</pre><p>... variable that will be used to append to URL when this place is loaded.</p><p> </p><p>We have loaded: </p><pre>'./HelloPresenter'</pre><p>and associated it with out place ... however we don't yet have this presenter ready.</p><h2>HelloPresenter</h2><ul><li>let's create &quot;<strong>HelloPresenter.js</strong>&quot; under &quot;hello&quot; folder.</li></ul><p>Code for &quot;HelloPresenter.js&quot;:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>define([
+    'Titan',
+    './HelloView'
+], function (Titan, View) {
+    return Titan.Presenter.extend({
+        View: View,
+        sayHello: function () {
+            console.log("Hello!");
+        }
+    });
+});</pre></td></tr></table><p>Presenter defines behavior of the &quot;view&quot;. In this presenter, behavior is limited to the &quot;sayHello&quot; function.</p><p>Also we have loaded </p><pre>'./HelloView'</pre><p>... and used it as this presenter's view.</p><h2>HelloView &amp; hello.html</h2><ul><li>create &quot;<strong>HelloView.js</strong>&quot; file inside &quot;hello&quot; folder</li></ul><p>Code for &quot;HelloView.js&quot;:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>define([
+    'Titan',
+    'template!./hello.html'
+], function (Titan, template) {
+    return Titan.View.extend({
+        template: template
+    });
+});</pre></td></tr></table><p>All we did there is loaded a html document (hello.html), and assigned it as this view's &quot;<strong>template</strong>&quot;.</p><p>Notice </p><pre>'template!./hello.html' </pre><p>is loading html file from path using the &quot;template!&quot; plugin (it will parse our html document into a function).</p><ul><li>create &quot;<strong>hello.html&quot; </strong>(analyse the path in the code of &quot;HelloView.js&quot;, based on this path we decide where to place our &quot;hello.html&quot; file)   ...<strong><span style="color: rgb(255,0,0);"><a class="confluence-link" href="/download/attachments/14257046/02.png?version=1&amp;modificationDate=1355155499000" data-linked-resource-container-id="14257046" data-linked-resource-id="14221921" data-linked-resource-type="attachment" data-linked-resource-default-alias="02.png" data-base-url="http://confluence-oss.lmera.ericsson.se"><span style="color: rgb(255,0,0);">hint</span></a></span></strong></li></ul><p>Markup for &quot;hello.html&quot;:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>&lt;div data-name="box">
+    &lt;h1>Hello&lt;/h1>&lt;br />
+    &lt;a href="#Greetings/hello">#Greetings/hello&lt;/a>&lt;br />
+    &lt;a href="#Greetings/goodbye">#Greetings/goodbye&lt;/a>
+&lt;/div></pre></td></tr></table><p>Notice href attributes for links in the above markup point to locations prepended with hash (#).</p><h2>Start your application</h2><ul><li>let's edit the &quot;index.html&quot; that we have created earlier</li></ul><p>What we need inside index is something like:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=html/xml" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9aHRtbC94bWx9&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>&lt;html>
+&lt;head>
+    &lt;title>Greetings page&lt;/title>
+    &lt;script type="text/javascript" src="js-core-0.1.1-dev.js">&lt;/script>
+    &lt;script type="text/javascript">
+        require({
+            baseUrl:'src'
+        },
+        ['Greetings/Application'],
+        function (Application) {
+            var app = new Application({
+                container:'#myContainer'
+            });
+            app.start();
+        });
+    &lt;/script>
+&lt;/head>
+&lt;body>
+    &lt;div id="myContainer">&lt;/div>
+&lt;/body>
+&lt;/html></pre></td></tr></table><p>First we create new instance of Application Class, loaded as a Require.js module  (loaded from 'Greetings/Application.js').</p><p>required option in Application is &quot;container&quot;. &quot;Container&quot; is a DOM element where we nest Application Views,  specify using jQuery selector ( &quot;#myContainer&quot;).</p><p>After Initialisation we start application using method app.start();</p><p>First let's verify that we have everything we need. Our project structure should look like that:</p><p>
+
+
+		<img src="../../images/tutorial/basic/folder_verify.png"></img>
+
+
+</p><p>If everything goes well we should now be able to display part of our application in a web browser.</p>
+<ul><li>depending on cross-origin policy of our browser we may need to setup http server to serve our website (instance of Apache httpd should be fine)</li>
+<li>we navigate to where our application is, eg: http//localhost/root</li>
+</ul>
+<p>
+We should be able to display a page with DOM elements specified by our view. 
+If nothing displays, you may need to inspect your code (if you're using Chrome you can use ctrl+shift+ J to get into browser's console in search for error logs).
+</p>
+
+<h2>Analyse resulting DOM structure</h2>
+
+<p>Let's see how template from our view got transformed and displayed in the browser:</p>
+<p> </p>
+<p>Our template from &quot;hello.html&quot;:</p>
+<p>
+
+		<img src="../../images/tutorial/basic/dom_template.png"/>
+</p>
+<p>And Resulting DOM structure populated by the browser (user your browser's DOM inspector to investigate):</p>	
+<p>	
+		<img src="../../images/tutorial/basic/dom_result.png"/>
+</p>		
+<p>We should notice a few things:</p>
+<ul>
+	<li>in &quot;index.html&quot; we have specified application container as JQuery selector: &quot;#<strong>myContainer</strong>&quot; and that's where the template is nested
+	</li>
+	<li>in &quot;Application.js&quot; we have specified a &quot;namespace&quot; variable as &quot;Greetings&quot; and now elements 
+	from html template that have &quot;data-name&quot; attribute are prepended with this namespace. 
+	This will ensure proper css class naming convention, hence sandboxing the styles for different applications.</li>
+	</ul><p>In browser (example using Chrome) you should see this:</p>	
+
+	<p>	
+			<img src="../../images/tutorial/basic/hello_result.png">
+			</img>
+	</p>		
+
+	<h2>Summary</h2>
+	<ul>
+		<li>We have build the following structure in our application:</li>
+	</ul>
+	<p>
+		
+		<img src="../../images/tutorial/basic/arch_struct_single.png"/>
+
+
+	</p>
+<ul><li>We have been able to display our application's view in the browser</li><li>We have examined differences between our HTML template and resulting DOM structure</li><li>We have not applied any styling to our application</li><li>We have defined pattern for &quot;HelloView&quot; but we have not yet used this pattern to switch between different places</li></ul>
+		<p>&nbsp;</p>
+		<p>Next Chapter: <a href="bt_5.html">3. Excercise2</a></p>
+    </body>
+	
+</document>

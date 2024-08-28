@@ -1,0 +1,30 @@
+.example06 {
+
+    &-MyWidget { // widget (starts from dash and uppercase)
+        padding: 10px;
+        border: 2px solid orange;
+        cursor: pointer;
+
+        &-title { // element (starts from dash and lowercase)
+            color: #e99400;
+            font-weight: bold;
+        }
+
+        &-label { // element (starts from dash and lowercase)
+            font-weight: bold;
+
+            &_disabled { // modifier (starts from underscore and lowercase)
+
+                &_true { // modifier value (starts from underscore and lowercase)
+                    color: red;
+                }
+
+                &_false { // modifier value (starts from underscore and lowercase)
+                    color: #00aa4f;
+                }
+
+            }
+        }
+    }
+
+}

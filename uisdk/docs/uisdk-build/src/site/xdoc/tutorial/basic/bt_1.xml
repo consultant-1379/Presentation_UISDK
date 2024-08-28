@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Setup</title>
+	</properties>
+	
+	
+<body>
+	<h1>Setup</h1>
+
+	<h2>Install UISDK-build globally (requires Node.js and NPM installed)</h2>
+	<p> 
+		Install uisdk-build using npm from provided URL:
+	</p>
+	<p> 
+		Open your bash/cmd (in any location):
+		<pre>npm install -g &#60;tarball url&#62;
+		</pre>
+		... uisdk-build will be installed globally and available from any location on this machine.
+		This command can also be used by providing path to local file instead URL 
+		(if you choose to download uisdk-build package from a direct link).
+	</p>	
+
+	
+	<h2>Verify installation</h2>
+	<p> 
+	In your cmd/bash navigate to project root and type:
+	<pre>uisdk-build</pre>
+	...  you should see this message:
+	<pre>(e): File build.json not found</pre>
+	... this means your uisdk-build installation is working and looks for build configuration file (build.json).
+	</p>	
+
+	
+</body>
+</document>

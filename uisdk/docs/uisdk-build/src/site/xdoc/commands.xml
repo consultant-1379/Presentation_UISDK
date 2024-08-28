@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>Tasks</title>
+</properties>
+	
+<body>
+	<h1>Command list</h1>
+    <p>
+        Notice: all usage examples are for global installation only!
+    </p>
+    <p>
+		Usage:
+		<pre>uisdk &#60;command&#62;</pre>
+	</p>	
+	<h2>Commands</h2>
+<pre>
+-h, --help              			display full list of options
+-f  &#60;file&#62;      				change default build file name
+-d, --config-file-dir &#60;directory&#62;		change directory containing build configuration file
+-t, --timeout &#60;miliseconds&#62;			default timeout for task execution
+-e, --exclusive &#60;phase name&#62;			run default or provided phase exclusively
+--no-color                         		remove coloring for CLI messages
+--list-tasks                       		list available build tasks
+--list-phases                      		list phases that are loaded from configuration file
+--show-configuration               		show loaded and merged configuration
+</pre>	
+</body>
+</document>

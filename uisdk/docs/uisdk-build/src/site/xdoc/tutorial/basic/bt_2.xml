@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>Configuration file</title>
+</properties>
+	
+<body>
+	<h1>Create build configuration file</h1>
+
+	<h2>Create build.json</h2>
+	<p> 
+		Create empty file called "build.json" in root of your project  and edit it using your default editor.
+	</p>
+
+	<h2>Specify global variables and phases</h2>
+	<p> 
+		In your "build.json" write:
+<pre>
+{
+    "properties": {
+        "buildDir": "target"
+    },
+    "phases": {
+        "clean": {
+            "delete": {
+                "target": "$(buildDir)"
+            }
+        }
+    }
+}
+</pre>
+		
+	</p>	
+	<h2>Verify configuration file</h2>
+	<p> 	
+		Verify build configuration file by running the build. In project root type in:
+		<pre>uisdk-build</pre>	
+		... you should get message:
+		<pre> (e): Default phases should be defined, (eg. "defaultPhase": "..." )</pre>	
+		... add default phase to "build.json" and verify again.
+		"build.json" should look like this:
+<pre>		
+{
+    "properties": {
+        "buildDir": "target"
+    },
+	"defaultPhase": "clean",
+    "phases": {
+        "clean": {
+            "delete": {
+                "target": "$(buildDir)"
+            }
+        }
+    }
+}
+</pre>			
+	</p>
+	
+		
+	<h2>Analyse the outcome</h2>
+	<p>
+		When running "uisdk-build" command, we have effectively executed the default phase. 
+		As you can assume, this would have caused the "target" folder to be deleted (if such existed) 
+		from the root of the project. Now create "target" folder, run build again, and see if that's what happens.
+	</p>	
+</body>
+</document>

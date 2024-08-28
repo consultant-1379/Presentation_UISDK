@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+<properties>
+	<title>Downloads and Dependencies</title>
+</properties>
+	
+<body>
+	<h2>Download JS Core</h2>
+	<p>
+		There are two versions of JS Core available:
+	</p>
+	<ul style="list-style-type: square;">
+		<li>Production Version 1.1 - code is compressed and minified to run efficiently in your web application</li>
+		<li>Development Version 1.1 - this is uncompressed (readable code) for testing and development</li>
+	</ul>
+	<h4>Downloads:</h4>
+	<p>
+		Production Version: <a class="confluence-link" href="/download/attachments/14255496/titan-0.1.1-prod.js?version=1&amp;modificationDate=1355153639000" data-linked-resource-container-id="14255496" data-linked-resource-id="14221916" data-linked-resource-type="attachment" data-linked-resource-default-alias="titan-0.1.1-prod.js" data-base-url="http://confluence-oss.lmera.ericsson.se">titan-0.1.1-prod.js</a>
+	</p>
+	<p>
+		Development Version: <a class="confluence-link" href="/download/attachments/14255496/titan-0.1.1-dev.js?version=1&amp;modificationDate=1355153745000" data-linked-resource-container-id="14255496" data-linked-resource-id="14221917" data-linked-resource-type="attachment" data-linked-resource-default-alias="titan-0.1.1-dev.js" data-base-url="http://confluence-oss.lmera.ericsson.se">titan-0.1.1-dev.js</a>
+	</p>
+	<p>
+		NOTE: 0.1.1 is unstable version.
+	</p>
+	
+		<h2>Development and Production Versions</h2>
+		<p>
+			We provide the js-library in two versions: one for development and one for production.
+		</p>
+		<p>
+			The development version additionally contains tools/plugins, which we need to run the application without compilation.
+		</p>
+		<p>
+			The production version contains just those libraries, which we need to run a compiled version of application.
+		</p>
+		<p>
+			&nbsp;
+		</p>
+		<p>
+			List of base libraries for different versions:
+		</p>
+		<table border="1px" style="border: 1px solid grey;">
+		<tbody>
+		<tr>
+			<th class="confluenceTh">
+				DEVELOPMENT
+			</th>
+			<th colspan="1" class="confluenceTh">
+				File Size (kb)
+			</th>
+			<th class="confluenceTh">
+				PRODUCTION
+			</th>
+			<th colspan="1" class="confluenceTh">
+				File Size <span>(kb)</span>
+			</th>
+		</tr>
+		<tr>
+			<td class="confluenceTd">
+				require.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				80
+			</td>
+			<td class="confluenceTd">
+				almond.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				12
+			</td>
+		</tr>
+		<tr>
+			<td class="confluenceTd">
+				*template.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				8
+			</td>
+			<td class="confluenceTd">
+				&nbsp;
+			</td>
+			<td colspan="1" class="confluenceTd">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="confluenceTd">
+				<p>
+					*style.js
+				</p>
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				7
+			</td>
+			<td class="confluenceTd">
+				&nbsp;
+			</td>
+			<td colspan="1" class="confluenceTd">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td colspan="1" class="confluenceTd">
+				jquery.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				257
+			</td>
+			<td colspan="1" class="confluenceTd">
+				jquery.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				257
+			</td>
+		</tr>
+		<tr>
+			<td colspan="1" class="confluenceTd">
+				underscore.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				38
+			</td>
+			<td colspan="1" class="confluenceTd">
+				underscore.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				38
+			</td>
+		</tr>
+		<tr>
+			<td colspan="1" class="confluenceTd">
+				backbone.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				54
+			</td>
+			<td colspan="1" class="confluenceTd">
+				backbone.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				54
+			</td>
+		</tr>
+		<tr>
+			<td colspan="1" class="confluenceTd">
+				handlebars.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				51
+			</td>
+			<td colspan="1" class="confluenceTd">
+				handlebars.runtime.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				7
+			</td>
+		</tr>
+		<tr>
+			<td colspan="1" class="confluenceTd">
+				less.js
+			</td>
+			<td colspan="1" style="text-align: right;" class="confluenceTd">
+				118
+			</td>
+			<td colspan="1" class="confluenceTd">
+				&nbsp;
+			</td>
+			<td colspan="1" class="confluenceTd">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="highlight confluenceTd" colspan="1">
+				Total
+			</td>
+			<td class="highlight confluenceTd" colspan="1" style="text-align: right;">
+				613
+			</td>
+			<td class="highlight confluenceTd" colspan="1">
+				Total
+			</td>
+			<td class="highlight confluenceTd" colspan="1" style="text-align: right;">
+				368
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<p>
+			*-require.js plugin
+		</p>
+		<p>
+			&nbsp;
+		</p>
+		<p>
+			&nbsp;
+		</p>
+		<p>
+			&nbsp;
+		</p>	
+	
+</body>
+</document>

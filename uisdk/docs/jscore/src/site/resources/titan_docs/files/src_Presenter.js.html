@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\Presenter.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.7.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.7.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/_private.html">_private</a></li>
+            
+                <li><a href="..&#x2F;classes/Backbone.History.html">Backbone.History</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.html">Titan</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Application.html">Titan.Application</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Collection.html">Titan.Collection</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Element.html">Titan.Element</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.EventBus.html">Titan.EventBus</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Int.html">Titan.Int</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.MainController.html">Titan.MainController</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Model.html">Titan.Model</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Place.html">Titan.Place</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Presenter.html">Titan.Presenter</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.Router.html">Titan.Router</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.utils.html">Titan.utils</a></li>
+            
+                <li><a href="..&#x2F;classes/Titan.View.html">Titan.View</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/Titan.html">Titan</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src\Presenter.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+ * Connects the Model to the View
+ *
+ * @class Titan.Presenter
+ * @constructor
+ * @param options {Object} Contains optional properties that are added to the Presenter&#x27;s options object.
+ *                         Applies special options (model, collection, eventBus, view) directly to the Presenter.
+ *&#x2F;
+var Presenter = Titan.Presenter = function (parent, options) {
+
+    Utils_configure.call(this, options || {}, [&#x27;model&#x27;, &#x27;collection&#x27;]);
+
+    this._children = [];
+    this._parent = parent;
+    this.init(Utils_getApplication.call(this));
+
+};
+
+&#x2F;**
+ * Provides access to Backbone.View.extend via _private.Utils_extend
+ * See: [http:&#x2F;&#x2F;backbonejs.org&#x2F;#View-extend](http:&#x2F;&#x2F;backbonejs.org&#x2F;#View-extend)
+ *
+ * @method extend
+ *&#x2F;
+Presenter.extend = Utils_extend;
+
+Presenter.prototype = {
+
+    &#x2F;**
+     * Method called when Presenter is initialised. Empty by default, it can be overridden to provide functionality
+     *
+     * @method init
+     *&#x2F;
+    init: function (app) {
+    },
+
+    &#x2F;**
+     * Instantiates and returns a given class. The class is given a reference to the Presenter as a parent, and is
+     * added as a child of Presenter.
+     *
+     * @param MyClass {*} The Class to be instantiated
+     * @return {*} An instance of MyClass
+     *&#x2F;
+    create: function(MyClass) {
+        return Titan.create(MyClass, this);
+    },
+
+    &#x2F;**
+     * Replaces the contents of the specified container with the current widget
+     *
+     * @method start
+     * @param container {Titan.Element} The Element to place the widget within
+     *&#x2F;
+    start: function (container) {
+        if (this.view) {
+            var parent = View_getRoot.call(this.view).parent();
+            if (parent.length === 0 || parent[0] !== Element_getRoot.call(container)[0]) {
+                container.setWidget(this.view);
+            }
+        }
+    },
+    
+    &#x2F;**
+     * Removes the View associated with the Presenter from the container
+     *
+     * @param container {Titan.Element} The container that the application is currently running in.
+     *&#x2F;
+    stop: function (container) {
+        this.beforeStop();
+&#x2F;*
+        if (this.view) {
+            var parent = View_getRoot.call(this.view).parent();
+            if (parent.length !== 0 || parent[0] !== Element_getRoot.call(container)[0]) {
+                container.removeWidget(this.view);
+            }
+        }
+*&#x2F;
+        _.each(this._children, function(child) {
+            child.stop();
+        })
+    },
+
+    &#x2F;**
+     * Method called before Presenter is stopped. Empty by default, it can be overridden to provide functionality
+     *
+     * @method init
+     *&#x2F;
+    beforeStop: function () {
+    }
+
+};
+
+&#x2F;**
+ * Gets the parent of the View.
+ *
+ * @method parent
+ * @return {*} The parent of the Presenter
+ *&#x2F;
+
+&#x2F;**
+ * Adds a child to the View.
+ *
+ * @method addChild
+ * @param widget {*} The child to be added to the Presenter
+ *&#x2F;
+
+&#x2F;**
+ * Binds a callback to an event name that can be triggered elsewhere.
+ * See: [http:&#x2F;&#x2F;backbonejs.org&#x2F;#Events-on](http:&#x2F;&#x2F;backbonejs.org&#x2F;#Events-on)
+ *
+ * @method on
+ * @param event {String} Key for the event
+ * @param callback {Function} Callback to be executed when event is triggered
+ * @param [context] {*} Specifies the context in which the callback should execute
+ *&#x2F;
+
+&#x2F;**
+ * Unbinds an existing callback from an event name.
+ * See: [http:&#x2F;&#x2F;backbonejs.org&#x2F;#Events-off](http:&#x2F;&#x2F;backbonejs.org&#x2F;#Events-off)
+ *
+ * @method off
+ * @param [event] {String} Key for the event
+ * @param callback {Function} Callback to be executed when event is triggered
+ * @param [context] {*} Specifies the context in which the callback should execute
+ *&#x2F;
+
+&#x2F;**
+ * Triggers an existing callback for an event name.
+ * See: [http:&#x2F;&#x2F;backbonejs.org&#x2F;#Events-off](http:&#x2F;&#x2F;backbonejs.org&#x2F;#Events-off)
+ *
+ * @method off
+ * @param [event] {String} Key for the event
+ * @param [*args] {Array} An optional array of arguments for the event&#x27;s callback method
+ *&#x2F;
+_.extend(Presenter.prototype, HasChildren, Backbone.Events);
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

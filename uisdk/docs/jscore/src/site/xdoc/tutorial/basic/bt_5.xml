@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+	<properties>
+		<title>Functional Specification</title>
+	</properties>
+
+<body class="mceContentBody wiki-content fullsize">
+	<h1>Exercise 2</h1>
+	<p>Multiple places, applying CSS</p> 
+	<p>&nbsp;</p>         
+	<p>In previous exercise we have created most simple application, let's now refine it two steps further (as illustrated below):</p>
+	<p><img src="../../images/tutorial/basic/arch_steps.png"/></p>
+	<h2>Attach a stylesheet</h2>
+	<p>As illustrated above, we can attach a css style-sheet to our View.</p><ul><li>simply add path to the css file when defining dependencies for the &quot;<strong>HelloView.js</strong>&quot; (prepend path with the &quot;styles!&quot; annotation which will use the &quot;styles&quot; plugin of Require.js</li><li>add styles variable in the &quot;HelloView.js&quot; and assign styles parsed by the &quot;styles&quot; plugin to it:</li></ul><p>Resulting code:</p><table class="wysiwyg-macro" data-macro-name="code" data-macro-parameters="language=javascript" style="background-image: url(/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9amF2YXNjcmlwdH0&amp;locale=en_GB&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tr><td class="wysiwyg-macro-body"><pre>define([
+    'Titan',
+    'template!./hello.html',
+    'styles!./hello.css'
+	], function (Titan, template, style) {
+		return Titan.View.extend({
+			template: template,
+			styles: style
+		});
+	});</pre></td></tr></table><ul><li>don't forget to place your css file in the path (in the above case we call it &quot;<strong>hello.css</strong>&quot; and place it inside &quot;hello&quot; folder)</li></ul><p>Use any styles you want, but remember you're not applying styles to the template but to the resulting DOM structure (check previous chapter for reference).</p><p> </p><p>If all is well, you should be able to refresh the page, and see the resulting styles in your browser.</p><p> </p><p><span style="color: rgb(255,102,0);"><strong>HINT</strong></span>:</p><p>I've used following styles : </p><p>.Greetings-box {<br /> width: 300px;<br /> height: 160px;<br /> background: orange;<br />}<br /><br />that resulted in:</p><p>
+	<img src="../../images/tutorial/basic/hello_style_result.png"/>
+	</p><h2>Goodbye place</h2>
+	<p>Half of the work is done. Now we need another place, let's call it &quot;Goodbye Place&quot;.</p>
+	<ul><li><strong>look at the diagram</strong> on the top of the page, and use the analogy of &quot;Hello Place&quot; in order to create &quot;Goodbye Place&quot; together with it's Presenter, View, template and styles</li><li>use the template from &quot;HelloView&quot; as a hint on what the pattern should be for the &quot;Goodbye Place&quot; (look for clues inside href attribute of the anchor tag)</li></ul><p>This is the most challenging part of tutorial so far, so take your time, and use the console &amp; DOM inspector of your browser if things don't work.</p><h2>Does it work together?</h2><p>Upon completion you should have an application that is able to switch places when a link is clicked. Also in the console you should see that the basic behavior of your presenters is working (e.g. sayHello function in HelloPresenter should be logging a hello message to console).</p><p> </p><p>Once you're happy that you're application works well, observe how the address bar of your browser changes when the link is clicked.</p><p>In my browser's address I was able to see:</p><p>
+	<img src="../../images/tutorial/basic/address_hello.png"/>
+	</p><p>and </p><p>
+	<img src="../../images/tutorial/basic/address_goodbye.png"/>
+	</p><p>Was there a http request fired by your browser when changing places <strong>?</strong> How could you inspect that <strong>?</strong></p><p> </p>
+	</body>	
+
+</document>
